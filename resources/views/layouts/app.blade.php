@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>@yield('title', 'Kodex Studio — Soluciones que hacen crecer tu negocio')</title>
     <meta name="description" content="@yield('meta_description', 'Servicios profesionales para hacer crecer tu negocio.')">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body class="bg-white text-slate-700 antialiased selection:bg-blue-100">
@@ -13,18 +16,17 @@
     <div id="scroll-progress" class="fixed left-0 top-0 z-[60] h-1 w-0 bg-gradient-to-r from-blue-500 to-indigo-600 transition-[width] duration-150"></div>
 
     {{-- ===== Barra de navegación (fija arriba) ===== --}}
-    <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-lg transition-shadow duration-300">
+    <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-[#1E1E2E] bg-[#0A0A0F]/80 font-body backdrop-blur-lg transition-shadow duration-300">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-            <x-brand-logo />
-            <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-                <a href="{{ route('home') }}#servicios" class="transition hover:text-blue-600">Planes</a>
-                <a href="{{ route('home') }}#proyectos" class="transition hover:text-blue-600">Proyectos</a>
-                <a href="{{ route('home') }}#sobre-mi" class="transition hover:text-blue-600">Nosotros</a>
-                <a href="{{ route('home') }}#contacto" class="transition hover:text-blue-600">Contacto</a>
+            <x-brand-logo on-dark />
+            <div class="hidden items-center gap-8 text-sm font-medium text-[#8888AA] md:flex">
+                <a href="{{ route('home') }}#servicios" class="transition hover:text-[#F0F0F8]">Planes</a>
+                <a href="{{ route('home') }}#proyectos" class="transition hover:text-[#F0F0F8]">Proyectos</a>
+                <a href="{{ route('home') }}#sobre-mi" class="transition hover:text-[#F0F0F8]">Nosotros</a>
+                <a href="{{ route('home') }}#contacto" class="transition hover:text-[#F0F0F8]">Contacto</a>
             </div>
             <a href="{{ route('quote') }}"
-               class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:shadow-blue-600/40">
-                <x-heroicon-s-paper-airplane class="size-4" />
+               class="rounded-full border border-[#6C63FF] px-5 py-2.5 text-sm font-medium text-[#F0F0F8] transition duration-300 hover:bg-[#6C63FF]">
                 Solicitar cotización
             </a>
         </nav>

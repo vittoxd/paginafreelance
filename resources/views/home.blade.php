@@ -2,68 +2,67 @@
 
 @section('content')
 
-{{-- ===================== HERO ===================== --}}
-<section class="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-    {{-- Blobs decorativos animados de fondo --}}
-    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
-        <div class="animate-blob absolute -left-20 top-0 size-72 rounded-full bg-blue-300/40 blur-3xl"></div>
-        <div class="animate-blob animation-delay-2000 absolute right-0 top-10 size-72 rounded-full bg-indigo-300/40 blur-3xl"></div>
-        <div class="animate-blob animation-delay-4000 absolute bottom-0 left-1/3 size-72 rounded-full bg-sky-300/40 blur-3xl"></div>
+{{-- ===================== HERO (Kodex Studio) ===================== --}}
+<section class="relative -mt-16 overflow-hidden bg-[#0A0A0F] font-body">
+    {{-- Resplandores de acento (violeta / cian) --}}
+    <div class="pointer-events-none absolute inset-0 -z-10">
+        <div class="absolute left-1/4 top-0 size-96 -translate-x-1/2 rounded-full bg-[#6C63FF]/20 blur-[120px]"></div>
+        <div class="absolute bottom-0 right-1/4 size-80 translate-x-1/2 rounded-full bg-[#00D4FF]/10 blur-[120px]"></div>
     </div>
-    {{-- Patrón de puntos sutil --}}
-    <div class="bg-dots pointer-events-none absolute inset-0 -z-10"></div>
-    <div class="animate-fade-up mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
-        <span class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1.5 text-sm font-medium text-blue-700 shadow-sm">
-            <span class="size-2 animate-pulse rounded-full bg-emerald-500"></span>
+
+    {{-- Firma visual: bloque de código flotante (oculto en mobile) --}}
+    <pre class="hero-code pointer-events-none absolute left-1/2 top-1/2 -z-10 hidden -translate-x-1/2 -translate-y-1/2 -rotate-3 text-left font-mono text-base leading-relaxed text-[#F0F0F8] md:block" aria-hidden="true"><span style="color:#8888AA">// Kodex Studio — desarrollo a medida</span>
+<span style="color:#6C63FF">export default function</span> <span style="color:#00D4FF">App</span>() {
+  <span style="color:#6C63FF">const</span> stack = [<span style="color:#00D4FF">"React"</span>, <span style="color:#00D4FF">"Next.js"</span>, <span style="color:#00D4FF">"Laravel"</span>];
+  <span style="color:#6C63FF">return</span> &lt;<span style="color:#00D4FF">Producto</span> rapido escalable /&gt;;
+}</pre>
+
+    <div class="hero-fade-up relative mx-auto max-w-4xl px-6 pb-28 pt-32 text-center md:pb-36 md:pt-44">
+        {{-- Badge --}}
+        <span class="inline-flex items-center gap-2 rounded-full border border-[#1E1E2E] bg-[#1E1E2E]/60 px-4 py-1.5 text-sm text-[#F0F0F8]">
+            <span class="hero-dot size-2 rounded-full bg-emerald-400"></span>
             Disponibles para nuevos proyectos
         </span>
 
-        <h1 class="mx-auto mt-8 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl">
-            Soluciones que
-            <span class="text-gradient">hacen crecer</span>
-            tu negocio
+        {{-- Headline (dos líneas) --}}
+        <h1 class="font-display mx-auto mt-8 max-w-3xl font-bold leading-[1.1] tracking-tight text-[#F0F0F8]" style="font-size: clamp(2.2rem, 5vw, 3.8rem);">
+            Webs y apps que tus<br>
+            <span class="hero-headline-gradient">clientes usan de verdad.</span>
         </h1>
 
-        <p class="mx-auto mt-6 max-w-2xl text-lg text-slate-600">
-            Servicios profesionales de calidad, con atención cercana y resultados que
-            se notan. Cuéntanos qué necesitas y lo hacemos realidad.
+        {{-- Subheadline --}}
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-[#8888AA]">
+            Desarrollo a medida con React, Next.js y Laravel. Sin templates.
+            Sin agencias intermediarias. Solo resultados.
         </p>
 
+        {{-- CTAs --}}
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="{{ route('quote') }}" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:shadow-blue-600/40 sm:w-auto">
-                <x-heroicon-s-paper-airplane class="size-5" />
-                Solicitar cotización
+            <a href="{{ route('quote') }}" class="hero-cta-primary inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00D4FF] px-8 py-3.5 font-medium text-white sm:w-auto">
+                Solicitar cotización →
             </a>
-            <a href="#servicios" class="w-full rounded-full border border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition hover:bg-slate-50 sm:w-auto">
-                Ver servicios
+            <a href="{{ route('home') }}#proyectos" class="inline-flex w-full items-center justify-center rounded-full border border-[#1E1E2E] px-8 py-3.5 font-medium text-[#F0F0F8] transition hover:border-[#6C63FF] hover:bg-[#6C63FF]/10 sm:w-auto">
+                Ver proyectos
             </a>
         </div>
 
-        {{-- Fila de confianza --}}
-        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            <div class="flex -space-x-3">
-                @foreach(['from-blue-400 to-blue-600', 'from-indigo-400 to-indigo-600', 'from-sky-400 to-sky-600', 'from-violet-400 to-violet-600'] as $g)
-                    <div class="size-9 rounded-full bg-gradient-to-br {{ $g }} ring-2 ring-white"></div>
-                @endforeach
-            </div>
-            <div class="text-center text-sm text-slate-600 sm:text-left">
-                <div class="flex justify-center gap-0.5 text-amber-400 sm:justify-start">
-                    @for($i = 0; $i < 5; $i++)<x-heroicon-s-star class="size-4" />@endfor
+        {{-- Prueba social: logos de clientes --}}
+        <div class="mt-14">
+            <p class="text-sm text-[#8888AA]">Con la confianza de empresas en Chile y el extranjero</p>
+            <div class="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 text-[#8888AA]">
+                <div class="flex items-center gap-2 transition hover:text-[#F0F0F8]">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l10 18H2z"/></svg>
+                    <span class="font-display text-lg font-bold">Norvik</span>
                 </div>
-                <span>+10 clientes satisfechos</span>
+                <div class="flex items-center gap-2 transition hover:text-[#F0F0F8]">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
+                    <span class="font-display text-lg font-bold">Lumio</span>
+                </div>
+                <div class="flex items-center gap-2 transition hover:text-[#F0F0F8]">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l10 10-10 10L2 12z"/></svg>
+                    <span class="font-display text-lg font-bold">Vexa</span>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
-
-{{-- ===================== LOGOS / CONFIANZA ===================== --}}
-<section class="border-b border-slate-200 bg-white">
-    <div class="mx-auto max-w-6xl px-6 py-10">
-        <p class="text-center text-sm font-medium uppercase tracking-wide text-slate-400">Con la confianza de</p>
-        <div class="reveal mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60 grayscale">
-            @foreach(['Acme', 'Nova', 'Lumina', 'Vertex', 'Zenith'] as $logo)
-                <span class="text-xl font-bold tracking-tight text-slate-500">{{ $logo }}</span>
-            @endforeach
         </div>
     </div>
 </section>
