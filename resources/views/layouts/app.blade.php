@@ -9,6 +9,9 @@
 </head>
 <body class="bg-white text-slate-700 antialiased selection:bg-blue-100">
 
+    {{-- ===== Barra de progreso de lectura ===== --}}
+    <div id="scroll-progress" class="fixed left-0 top-0 z-[60] h-1 w-0 bg-gradient-to-r from-blue-500 to-indigo-600 transition-[width] duration-150"></div>
+
     {{-- ===== Barra de navegación (fija arriba) ===== --}}
     <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-lg transition-shadow duration-300">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">

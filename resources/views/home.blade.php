@@ -55,6 +55,18 @@
     </div>
 </section>
 
+{{-- ===================== LOGOS / CONFIANZA ===================== --}}
+<section class="border-b border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-6 py-10">
+        <p class="text-center text-sm font-medium uppercase tracking-wide text-slate-400">Con la confianza de</p>
+        <div class="reveal mt-6 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 opacity-60 grayscale">
+            @foreach(['Acme', 'Nova', 'Lumina', 'Vertex', 'Zenith'] as $logo)
+                <span class="text-xl font-bold tracking-tight text-slate-500">{{ $logo }}</span>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 {{-- ===================== PLANES (PRICING) ===================== --}}
 <section id="servicios" class="border-y border-slate-200 bg-slate-50">
     <div class="mx-auto max-w-6xl px-6 py-20">
@@ -78,6 +90,11 @@
                         </span>
                     @endif
 
+                    @if($service->icon)
+                        <div class="mb-4 grid size-12 place-items-center rounded-xl {{ $featured ? 'bg-white/15 text-white' : 'bg-blue-50 text-blue-600' }}">
+                            <x-dynamic-component :component="$service->icon" class="size-6" />
+                        </div>
+                    @endif
                     <h3 class="text-xl font-bold {{ $featured ? 'text-white' : 'text-slate-900' }}">{{ $service->title }}</h3>
                     @if($service->tagline)
                         <p class="mt-1 text-sm {{ $featured ? 'text-blue-100' : 'text-slate-500' }}">{{ $service->tagline }}</p>
@@ -195,11 +212,11 @@
         </div>
         <div class="grid grid-cols-2 gap-4">
             <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                <p class="text-3xl font-bold text-blue-600">100%</p>
+                <p class="stat-count text-3xl font-bold text-blue-600" data-target="100" data-suffix="%">0%</p>
                 <p class="mt-1 text-sm text-slate-500">Compromiso</p>
             </div>
             <div class="rounded-2xl border border-slate-200 bg-white p-6 text-center shadow-sm">
-                <p class="text-3xl font-bold text-blue-600">+10</p>
+                <p class="stat-count text-3xl font-bold text-blue-600" data-target="10" data-prefix="+">+0</p>
                 <p class="mt-1 text-sm text-slate-500">Clientes felices</p>
             </div>
             <div class="col-span-2 rounded-2xl border border-blue-100 bg-blue-50 p-6 text-center">

@@ -27,6 +27,7 @@ class DemoSeeder extends Seeder
         $planes = [
             [
                 'title' => 'Plan Básico',
+                'icon' => 'heroicon-o-sparkles',
                 'tagline' => 'Ideal para quienes están empezando',
                 'delivery_time' => '3 a 5 días',
                 'description' => 'Lo esencial para dar tu primer paso con buena calidad, sin gastar de más.',
@@ -36,6 +37,7 @@ class DemoSeeder extends Seeder
             ],
             [
                 'title' => 'Plan Profesional',
+                'icon' => 'heroicon-o-rocket-launch',
                 'tagline' => 'El favorito de nuestros clientes',
                 'delivery_time' => '2 a 3 días',
                 'description' => 'El equilibrio perfecto entre precio, rapidez y resultados. La opción más elegida.',
@@ -45,6 +47,7 @@ class DemoSeeder extends Seeder
             ],
             [
                 'title' => 'Plan Premium',
+                'icon' => 'heroicon-o-trophy',
                 'tagline' => 'Para quienes quieren lo mejor',
                 'delivery_time' => '24 a 48 horas',
                 'description' => 'La experiencia completa: máxima prioridad, sin límites y con acompañamiento dedicado.',
