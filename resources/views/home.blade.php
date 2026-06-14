@@ -4,7 +4,13 @@
 
 {{-- ===================== HERO ===================== --}}
 <section class="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
-    <div class="mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
+    {{-- Blobs decorativos animados de fondo --}}
+    <div class="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+        <div class="animate-blob absolute -left-20 top-0 size-72 rounded-full bg-blue-300/40 blur-3xl"></div>
+        <div class="animate-blob animation-delay-2000 absolute right-0 top-10 size-72 rounded-full bg-indigo-300/40 blur-3xl"></div>
+        <div class="animate-blob animation-delay-4000 absolute bottom-0 left-1/3 size-72 rounded-full bg-sky-300/40 blur-3xl"></div>
+    </div>
+    <div class="animate-fade-up mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
         <span class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1.5 text-sm font-medium text-blue-700 shadow-sm">
             <span class="size-2 animate-pulse rounded-full bg-emerald-500"></span>
             Disponibles para nuevos proyectos
@@ -35,13 +41,13 @@
 {{-- ===================== PLANES (PRICING) ===================== --}}
 <section id="servicios" class="border-y border-slate-200 bg-slate-50">
     <div class="mx-auto max-w-6xl px-6 py-20">
-        <div class="mb-14 text-center">
+        <div class="reveal mb-14 text-center">
             <span class="text-sm font-semibold uppercase tracking-wide text-blue-600">Planes</span>
             <h2 class="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">Elige el plan ideal para ti</h2>
             <p class="mx-auto mt-4 max-w-xl text-slate-600">Cada plan está pensado para una necesidad distinta. Sin sorpresas ni letra chica.</p>
         </div>
 
-        <div class="mx-auto grid max-w-5xl items-stretch gap-8 lg:grid-cols-3">
+        <div class="reveal mx-auto grid max-w-5xl items-stretch gap-8 lg:grid-cols-3">
             @foreach($services as $service)
                 @php($featured = $service->is_featured)
                 <div @class([
@@ -103,7 +109,7 @@
         <h2 class="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">¿Cómo trabajamos?</h2>
         <p class="mx-auto mt-4 max-w-xl text-slate-600">Un proceso simple y transparente, de principio a fin.</p>
     </div>
-    <div class="grid gap-8 md:grid-cols-3">
+    <div class="reveal grid gap-8 md:grid-cols-3">
         @foreach([
             ['1', 'Cuéntanos tu idea', 'Nos escribes y conversamos sobre lo que necesitas, sin compromiso.'],
             ['2', 'Manos a la obra', 'Trabajamos en tu proyecto manteniéndote informado en cada paso.'],
@@ -121,12 +127,12 @@
 {{-- ===================== PROYECTOS ===================== --}}
 <section id="proyectos" class="border-y border-slate-200 bg-slate-50">
     <div class="mx-auto max-w-6xl px-6 py-20">
-        <div class="mb-14 text-center">
+        <div class="reveal mb-14 text-center">
             <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Proyectos realizados</h2>
             <p class="mx-auto mt-4 max-w-xl text-slate-600">Algunos de los trabajos que hemos llevado a cabo.</p>
         </div>
 
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div class="reveal grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             @foreach($projects as $project)
                 <a href="{{ route('projects.show', $project) }}"
                    class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-lg">
@@ -154,7 +160,7 @@
 
 {{-- ===================== NOSOTROS ===================== --}}
 <section id="sobre-mi" class="mx-auto max-w-6xl px-6 py-20">
-    <div class="grid items-center gap-12 md:grid-cols-2">
+    <div class="reveal grid items-center gap-12 md:grid-cols-2">
         <div>
             <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">¿Por qué elegirnos?</h2>
             <p class="mt-5 text-slate-600">
@@ -187,10 +193,68 @@
     </div>
 </section>
 
+{{-- ===================== TESTIMONIOS ===================== --}}
+<section class="border-y border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+        <div class="reveal mb-14 text-center">
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-600">Testimonios</span>
+            <h2 class="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">Lo que dicen nuestros clientes</h2>
+            <p class="mx-auto mt-4 max-w-xl text-slate-600">La confianza de quienes ya trabajaron con nosotros.</p>
+        </div>
+        <div class="reveal grid gap-6 md:grid-cols-3">
+            @foreach([
+                ['María González', 'Dueña de tienda', 'Quedé feliz con el resultado, súper profesional y atento en todo momento. ¡Lo recomiendo!'],
+                ['Juan Pérez', 'Emprendedor', 'Cumplieron los plazos y el trato fue muy cercano. La comunicación por WhatsApp, excelente.'],
+                ['Carla Soto', 'Gerente PyME', 'Muy buena calidad y atención. Sin duda volveré a contratar sus servicios.'],
+            ] as $t)
+                <figure class="flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm">
+                    <div class="flex gap-0.5 text-amber-400">
+                        @for($i = 0; $i < 5; $i++)
+                            <x-heroicon-s-star class="size-5" />
+                        @endfor
+                    </div>
+                    <blockquote class="mt-4 flex-1 text-slate-600">“{{ $t[2] }}”</blockquote>
+                    <figcaption class="mt-6 flex items-center gap-3">
+                        <div class="grid size-11 place-items-center rounded-full bg-blue-100 font-bold text-blue-700">{{ Str::substr($t[0], 0, 1) }}</div>
+                        <div>
+                            <p class="font-semibold text-slate-900">{{ $t[0] }}</p>
+                            <p class="text-sm text-slate-500">{{ $t[1] }}</p>
+                        </div>
+                    </figcaption>
+                </figure>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================== FAQ ===================== --}}
+<section class="mx-auto max-w-3xl px-6 py-20">
+    <div class="reveal mb-14 text-center">
+        <span class="text-sm font-semibold uppercase tracking-wide text-blue-600">Preguntas frecuentes</span>
+        <h2 class="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">¿Tienes dudas?</h2>
+    </div>
+    <div class="reveal space-y-4">
+        @foreach([
+            ['¿Cómo solicito una cotización?', 'Haz clic en “Solicitar cotización”, elige el plan que te interesa y cuéntanos lo que necesitas. Te respondemos a la brevedad con una propuesta a tu medida.'],
+            ['¿Cuánto tardan en responder?', 'Normalmente respondemos dentro de las primeras 24 horas hábiles.'],
+            ['¿Los precios son fijos?', 'Los precios “desde” son una referencia. El valor final depende de los detalles de tu proyecto; por eso ofrecemos cotización personalizada y sin compromiso.'],
+            ['¿Ofrecen soporte después de la entrega?', '¡Sí! Todos los planes incluyen acompañamiento y soporte por WhatsApp.'],
+        ] as $faq)
+            <details class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <summary class="flex cursor-pointer list-none items-center justify-between font-semibold text-slate-900 [&::-webkit-details-marker]:hidden">
+                    {{ $faq[0] }}
+                    <x-heroicon-o-chevron-down class="size-5 shrink-0 text-blue-600 transition duration-300 group-open:rotate-180" />
+                </summary>
+                <p class="mt-4 leading-relaxed text-slate-600">{{ $faq[1] }}</p>
+            </details>
+        @endforeach
+    </div>
+</section>
+
 {{-- ===================== CONTACTO ===================== --}}
 <section id="contacto" class="border-t border-slate-200 bg-slate-50">
     <div class="mx-auto max-w-2xl px-6 py-20">
-        <div class="mb-10 text-center">
+        <div class="reveal mb-10 text-center">
             <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Hablemos</h2>
             <p class="mt-4 text-slate-600">Cuéntanos qué necesitas y te respondemos a la brevedad.</p>
         </div>
@@ -201,7 +265,7 @@
             </div>
         @endif
 
-        <form action="{{ route('contact.store') }}" method="POST" class="space-y-5">
+        <form action="{{ route('contact.store') }}" method="POST" class="reveal space-y-5">
             @csrf
             <div class="grid gap-5 sm:grid-cols-2">
                 <div>
