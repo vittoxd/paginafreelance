@@ -32,31 +32,81 @@
     </div>
 </section>
 
-{{-- ===================== SERVICIOS ===================== --}}
-<section id="servicios" class="mx-auto max-w-6xl px-6 py-20">
-    <div class="mb-14 text-center">
-        <h2 class="text-3xl font-bold text-slate-900 md:text-4xl">Nuestros servicios</h2>
-        <p class="mx-auto mt-4 max-w-xl text-slate-600">Elige el servicio que mejor se adapta a lo que necesitas.</p>
-    </div>
+{{-- ===================== PLANES (PRICING) ===================== --}}
+<section id="servicios" class="border-y border-slate-200 bg-slate-50">
+    <div class="mx-auto max-w-6xl px-6 py-20">
+        <div class="mb-14 text-center">
+            <span class="text-sm font-semibold uppercase tracking-wide text-blue-600">Planes</span>
+            <h2 class="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">Elige el plan ideal para ti</h2>
+            <p class="mx-auto mt-4 max-w-xl text-slate-600">Cada plan está pensado para una necesidad distinta. Sin sorpresas ni letra chica.</p>
+        </div>
 
-    <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        @foreach($services as $service)
-            <div class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:-translate-y-1 hover:border-blue-300 hover:shadow-lg">
-                <h3 class="text-lg font-semibold text-slate-900">{{ $service->title }}</h3>
-                @if($service->description)
-                    <p class="mt-2 flex-1 text-sm leading-relaxed text-slate-600">{{ $service->description }}</p>
-                @else
-                    <div class="flex-1"></div>
-                @endif
-                @if($service->price_from)
-                    <p class="mt-6 text-2xl font-bold text-blue-600">
-                        <span class="align-top text-sm font-medium text-slate-400">Desde</span>
-                        ${{ number_format($service->price_from, 0) }}
-                    </p>
-                @endif
-                <a href="#contacto" class="mt-4 rounded-full bg-blue-50 px-4 py-2 text-center text-sm font-semibold text-blue-700 transition group-hover:bg-blue-600 group-hover:text-white">
-                    Lo quiero
-                </a>
+        <div class="mx-auto grid max-w-5xl items-stretch gap-8 lg:grid-cols-3">
+            @foreach($services as $service)
+                @php($featured = $service->is_featured)
+                <div @class([
+                        'relative flex flex-col rounded-3xl p-8 transition hover:shadow-xl',
+                        'bg-blue-600 text-white shadow-xl ring-2 ring-blue-600 lg:-mt-4 lg:mb-4' => $featured,
+                        'border border-slate-200 bg-white shadow-sm' => ! $featured,
+                    ])>
+                    @if($featured)
+                        <span class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-xs font-bold text-slate-900 shadow">
+                            ★ Más popular
+                        </span>
+                    @endif
+
+                    <h3 class="text-xl font-bold {{ $featured ? 'text-white' : 'text-slate-900' }}">{{ $service->title }}</h3>
+                    @if($service->tagline)
+                        <p class="mt-1 text-sm {{ $featured ? 'text-blue-100' : 'text-slate-500' }}">{{ $service->tagline }}</p>
+                    @endif
+
+                    @if($service->price_from)
+                        <p class="mt-6 flex items-baseline gap-1.5">
+                            <span class="text-sm font-medium {{ $featured ? 'text-blue-200' : 'text-slate-400' }}">Desde</span>
+                            <span class="text-4xl font-extrabold {{ $featured ? 'text-white' : 'text-slate-900' }}">${{ number_format($service->price_from, 0) }}</span>
+                        </p>
+                    @endif
+
+                    @if($service->description)
+                        <p class="mt-4 text-sm {{ $featured ? 'text-blue-50' : 'text-slate-600' }}">{{ $service->description }}</p>
+                    @endif
+
+                    <ul class="mt-6 flex-1 space-y-3 border-t pt-6 {{ $featured ? 'border-white/20' : 'border-slate-100' }}">
+                        @foreach($service->featureList() as $feature)
+                            <li class="flex items-start gap-2.5 text-sm">
+                                <x-heroicon-s-check-circle class="mt-0.5 size-5 shrink-0 {{ $featured ? 'text-amber-300' : 'text-blue-600' }}" />
+                                <span class="{{ $featured ? 'text-blue-50' : 'text-slate-600' }}">{{ $feature }}</span>
+                            </li>
+                        @endforeach
+                    </ul>
+
+                    <a href="#contacto"
+                       class="mt-8 rounded-full px-6 py-3 text-center text-sm font-semibold transition {{ $featured ? 'bg-white text-blue-600 hover:bg-blue-50' : 'bg-blue-600 text-white hover:bg-blue-700' }}">
+                        Quiero el {{ $service->title }}
+                    </a>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+{{-- ===================== CÓMO TRABAJAMOS ===================== --}}
+<section class="mx-auto max-w-6xl px-6 py-20">
+    <div class="mb-14 text-center">
+        <span class="text-sm font-semibold uppercase tracking-wide text-blue-600">Proceso</span>
+        <h2 class="mt-2 text-3xl font-bold text-slate-900 md:text-4xl">¿Cómo trabajamos?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-slate-600">Un proceso simple y transparente, de principio a fin.</p>
+    </div>
+    <div class="grid gap-8 md:grid-cols-3">
+        @foreach([
+            ['1', 'Cuéntanos tu idea', 'Nos escribes y conversamos sobre lo que necesitas, sin compromiso.'],
+            ['2', 'Manos a la obra', 'Trabajamos en tu proyecto manteniéndote informado en cada paso.'],
+            ['3', 'Entrega y soporte', 'Recibes el resultado final y te acompañamos también después de la entrega.'],
+        ] as $step)
+            <div class="rounded-2xl border border-slate-200 bg-white p-8 text-center shadow-sm">
+                <div class="mx-auto grid size-12 place-items-center rounded-full bg-blue-600 text-lg font-bold text-white">{{ $step[0] }}</div>
+                <h3 class="mt-5 text-lg font-semibold text-slate-900">{{ $step[1] }}</h3>
+                <p class="mt-2 text-sm text-slate-600">{{ $step[2] }}</p>
             </div>
         @endforeach
     </div>

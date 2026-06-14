@@ -12,8 +12,8 @@ use Illuminate\Support\Str;
 class DemoSeeder extends Seeder
 {
     /**
-     * Siembra el usuario administrador y contenido placeholder
-     * (solo nombres + precios) para rellenar con el negocio real.
+     * Siembra el usuario administrador y planes/proyectos de ejemplo
+     * (genéricos, listos para rellenar con el negocio real).
      */
     public function run(): void
     {
@@ -23,18 +23,38 @@ class DemoSeeder extends Seeder
             ['name' => 'Admin', 'password' => Hash::make('password')]
         );
 
-        // 2) Servicios placeholder: solo nombre + precio.
-        $servicios = [
-            ['title' => 'Servicio 1', 'price_from' => 350, 'is_featured' => true],
-            ['title' => 'Servicio 2', 'price_from' => 150, 'is_featured' => true],
-            ['title' => 'Servicio 3', 'price_from' => 500, 'is_featured' => true],
-            ['title' => 'Servicio 4', 'price_from' => 80,  'is_featured' => false],
+        // 2) Planes (tabla de precios tipo "bueno / mejor / premium")
+        $planes = [
+            [
+                'title' => 'Plan Básico',
+                'tagline' => 'Ideal para quienes están empezando',
+                'description' => 'Lo esencial para dar el primer paso con calidad.',
+                'price_from' => 80,
+                'is_featured' => false,
+                'features' => "Atención personalizada\n1 revisión incluida\nEntrega estándar\nSoporte por correo",
+            ],
+            [
+                'title' => 'Plan Profesional',
+                'tagline' => 'El favorito de nuestros clientes',
+                'description' => 'El equilibrio perfecto entre precio y resultados.',
+                'price_from' => 150,
+                'is_featured' => true,
+                'features' => "Todo lo del Plan Básico\n3 revisiones incluidas\nEntrega prioritaria\nSoporte por WhatsApp\nGarantía de satisfacción",
+            ],
+            [
+                'title' => 'Plan Premium',
+                'tagline' => 'Para quienes quieren lo mejor',
+                'description' => 'La experiencia completa, sin límites.',
+                'price_from' => 350,
+                'is_featured' => false,
+                'features' => "Todo lo del Plan Profesional\nRevisiones ilimitadas\nEntrega express\nSoporte prioritario 24/7\nAsesoría dedicada",
+            ],
         ];
 
-        foreach ($servicios as $i => $s) {
+        foreach ($planes as $i => $p) {
             Service::updateOrCreate(
-                ['slug' => Str::slug($s['title'])],
-                array_merge($s, ['description' => '', 'sort_order' => $i]),
+                ['slug' => Str::slug($p['title'])],
+                array_merge($p, ['sort_order' => $i]),
             );
         }
 
