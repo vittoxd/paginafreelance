@@ -83,7 +83,8 @@
             </div>
 
             <button type="submit"
-                    class="w-full rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700">
+                    class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:shadow-blue-600/40">
+                <x-heroicon-s-paper-airplane class="size-5" />
                 Solicitar cotización
             </button>
         </form>

@@ -15,10 +15,7 @@
     {{-- ===== Barra de navegación (fija arriba) ===== --}}
     <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-lg transition-shadow duration-300">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-            <a href="{{ route('home') }}" class="flex items-center gap-2 text-lg font-bold text-slate-900">
-                <span class="grid size-9 place-items-center rounded-lg bg-blue-600 text-sm font-bold text-white">I</span>
-                Impulsa
-            </a>
+            <x-brand-logo />
             <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
                 <a href="{{ route('home') }}#servicios" class="transition hover:text-blue-600">Planes</a>
                 <a href="{{ route('home') }}#proyectos" class="transition hover:text-blue-600">Proyectos</a>
@@ -26,7 +23,8 @@
                 <a href="{{ route('home') }}#contacto" class="transition hover:text-blue-600">Contacto</a>
             </div>
             <a href="{{ route('quote') }}"
-               class="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">
+               class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:shadow-blue-600/40">
+                <x-heroicon-s-paper-airplane class="size-4" />
                 Solicitar cotización
             </a>
         </nav>
@@ -54,10 +52,7 @@
             <div class="grid gap-10 md:grid-cols-3">
                 {{-- Marca --}}
                 <div>
-                    <a href="{{ route('home') }}" class="flex items-center gap-2 text-lg font-bold text-white">
-                        <span class="grid size-9 place-items-center rounded-lg bg-blue-600 text-sm font-bold text-white">I</span>
-                        Impulsa
-                    </a>
+                    <x-brand-logo on-dark />
                     <p class="mt-4 max-w-xs text-sm">Servicios profesionales para hacer crecer tu negocio, con atención cercana y resultados de calidad.</p>
                 </div>
 

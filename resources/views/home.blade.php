@@ -30,7 +30,8 @@
         </p>
 
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="{{ route('quote') }}" class="w-full rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 sm:w-auto">
+            <a href="{{ route('quote') }}" class="inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:shadow-blue-600/40 sm:w-auto">
+                <x-heroicon-s-paper-airplane class="size-5" />
                 Solicitar cotización
             </a>
             <a href="#servicios" class="w-full rounded-full border border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition hover:bg-slate-50 sm:w-auto">
@@ -342,7 +343,7 @@
                 @error('message') <p class="mt-1.5 text-sm text-rose-500">{{ $message }}</p> @enderror
             </div>
             <button type="submit"
-                    class="w-full rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700">
+                    class="w-full rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/25 transition duration-300 hover:-translate-y-0.5 hover:shadow-blue-600/40">
                 Enviar mensaje
             </button>
         </form>
