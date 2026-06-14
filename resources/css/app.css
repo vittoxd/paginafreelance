@@ -37,8 +37,31 @@
 }
 .animate-fade-up { animation: fadeUp 0.8s ease both; }
 
+/* ===== Texto con degradado animado ===== */
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50%      { background-position: 100% 50%; }
+}
+.text-gradient {
+    background: linear-gradient(90deg, #2563eb, #7c3aed, #2563eb);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientShift 5s ease infinite;
+}
+
+/* ===== Patrón de puntos sutil (fondo del hero) ===== */
+.bg-dots {
+    background-image: radial-gradient(circle, rgba(37, 99, 235, 0.12) 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
+}
+
 /* ===== Respeto a quienes prefieren menos movimiento ===== */
 @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; transition: none; }
     .animate-blob, .animate-fade-up { animation: none; }
+    .text-gradient { animation: none; }
 }

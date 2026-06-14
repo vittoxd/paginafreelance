@@ -10,6 +10,8 @@
         <div class="animate-blob animation-delay-2000 absolute right-0 top-10 size-72 rounded-full bg-indigo-300/40 blur-3xl"></div>
         <div class="animate-blob animation-delay-4000 absolute bottom-0 left-1/3 size-72 rounded-full bg-sky-300/40 blur-3xl"></div>
     </div>
+    {{-- Patrón de puntos sutil --}}
+    <div class="bg-dots pointer-events-none absolute inset-0 -z-10"></div>
     <div class="animate-fade-up mx-auto max-w-6xl px-6 py-24 text-center md:py-32">
         <span class="inline-flex items-center gap-2 rounded-full border border-blue-200 bg-white px-4 py-1.5 text-sm font-medium text-blue-700 shadow-sm">
             <span class="size-2 animate-pulse rounded-full bg-emerald-500"></span>
@@ -18,7 +20,7 @@
 
         <h1 class="mx-auto mt-8 max-w-3xl text-4xl font-bold leading-tight tracking-tight text-slate-900 md:text-6xl">
             Soluciones que
-            <span class="text-blue-600">hacen crecer</span>
+            <span class="text-gradient">hacen crecer</span>
             tu negocio
         </h1>
 
@@ -34,6 +36,21 @@
             <a href="#servicios" class="w-full rounded-full border border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition hover:bg-slate-50 sm:w-auto">
                 Ver servicios
             </a>
+        </div>
+
+        {{-- Fila de confianza --}}
+        <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div class="flex -space-x-3">
+                @foreach(['from-blue-400 to-blue-600', 'from-indigo-400 to-indigo-600', 'from-sky-400 to-sky-600', 'from-violet-400 to-violet-600'] as $g)
+                    <div class="size-9 rounded-full bg-gradient-to-br {{ $g }} ring-2 ring-white"></div>
+                @endforeach
+            </div>
+            <div class="text-center text-sm text-slate-600 sm:text-left">
+                <div class="flex justify-center gap-0.5 text-amber-400 sm:justify-start">
+                    @for($i = 0; $i < 5; $i++)<x-heroicon-s-star class="size-4" />@endfor
+                </div>
+                <span>+10 clientes satisfechos</span>
+            </div>
         </div>
     </div>
 </section>
@@ -52,7 +69,7 @@
                 @php($featured = $service->is_featured)
                 <div @class([
                         'relative flex flex-col rounded-3xl p-8 transition hover:shadow-xl',
-                        'bg-blue-600 text-white shadow-xl ring-2 ring-blue-600 lg:-mt-4 lg:mb-4' => $featured,
+                        'bg-gradient-to-br from-blue-600 to-indigo-700 text-white shadow-xl ring-2 ring-blue-500/50 lg:-mt-4 lg:mb-4' => $featured,
                         'border border-slate-200 bg-white shadow-sm' => ! $featured,
                     ])>
                     @if($featured)
@@ -248,6 +265,17 @@
                 <p class="mt-4 leading-relaxed text-slate-600">{{ $faq[1] }}</p>
             </details>
         @endforeach
+    </div>
+</section>
+
+{{-- ===================== BANNER CTA ===================== --}}
+<section class="px-6 py-16">
+    <div class="reveal mx-auto max-w-5xl overflow-hidden rounded-3xl bg-gradient-to-br from-blue-600 to-indigo-700 px-8 py-14 text-center shadow-2xl shadow-blue-600/20">
+        <h2 class="text-3xl font-bold text-white md:text-4xl">¿Listo para hacer crecer tu negocio?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-blue-100">Solicita tu cotización gratis y sin compromiso. Te respondemos en menos de 24 horas.</p>
+        <a href="{{ route('quote') }}" class="mt-8 inline-block rounded-full bg-white px-8 py-3.5 text-base font-semibold text-blue-700 shadow-lg transition hover:scale-105">
+            Solicitar cotización
+        </a>
     </div>
 </section>
 
