@@ -10,3 +10,7 @@ Route::get('/', [PublicSiteController::class, 'home'])->name('home');
 Route::get('/proyectos/{project:slug}', [PublicSiteController::class, 'showProject'])->name('projects.show');
 
 Route::post('/contacto', [PublicSiteController::class, 'storeContact'])->name('contact.store');
+
+// Cotización: GET muestra el formulario (con ?plan=slug opcional), POST lo guarda.
+Route::get('/cotizar', [PublicSiteController::class, 'showQuote'])->name('quote');
+Route::post('/cotizar', [PublicSiteController::class, 'storeQuote'])->name('quote.store');

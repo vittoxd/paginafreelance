@@ -19,6 +19,9 @@ class ServiceForm
                 TextInput::make('tagline')
                     ->label('¿Para qué sirve? (subtítulo corto)')
                     ->placeholder('Ej: Ideal para empezar'),
+                TextInput::make('delivery_time')
+                    ->label('Tiempo de entrega')
+                    ->placeholder('Ej: 3 a 5 días'),
                 TextInput::make('slug')
                     ->required(),
                 Textarea::make('description')

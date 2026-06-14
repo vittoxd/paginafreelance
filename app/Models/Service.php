@@ -3,12 +3,14 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Service extends Model
 {
     protected $fillable = [
         'title',
         'tagline',
+        'delivery_time',
         'slug',
         'description',
         'features',
@@ -34,4 +36,12 @@ class Service extends Model
         'is_featured' => 'boolean',
         'price_from'  => 'decimal:2',
     ];
+
+    /**
+     * Cotizaciones que apuntan a este plan.
+     */
+    public function quotes(): HasMany
+    {
+        return $this->hasMany(Quote::class);
+    }
 }

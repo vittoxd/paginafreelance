@@ -22,8 +22,8 @@
         </p>
 
         <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            <a href="#contacto" class="w-full rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 sm:w-auto">
-                Solicitar información
+            <a href="{{ route('quote') }}" class="w-full rounded-full bg-blue-600 px-8 py-3.5 text-base font-semibold text-white shadow-lg shadow-blue-600/20 transition hover:bg-blue-700 sm:w-auto">
+                Solicitar cotización
             </a>
             <a href="#servicios" class="w-full rounded-full border border-slate-300 bg-white px-8 py-3.5 text-base font-semibold text-slate-700 transition hover:bg-slate-50 sm:w-auto">
                 Ver servicios
@@ -67,6 +67,12 @@
                         </p>
                     @endif
 
+                    @if($service->delivery_time)
+                        <p class="mt-3 inline-flex w-fit items-center gap-1.5 rounded-full px-3 py-1 text-xs font-medium {{ $featured ? 'bg-white/15 text-white' : 'bg-blue-50 text-blue-700' }}">
+                            <x-heroicon-o-clock class="size-3.5" /> Entrega en {{ $service->delivery_time }}
+                        </p>
+                    @endif
+
                     @if($service->description)
                         <p class="mt-4 text-sm {{ $featured ? 'text-blue-50' : 'text-slate-600' }}">{{ $service->description }}</p>
                     @endif
@@ -80,9 +86,9 @@
                         @endforeach
                     </ul>
 
-                    <a href="#contacto"
+                    <a href="{{ route('quote', ['plan' => $service->slug]) }}"
                        class="mt-8 rounded-full px-6 py-3 text-center text-sm font-semibold transition {{ $featured ? 'bg-white text-blue-600 hover:bg-blue-50' : 'bg-blue-600 text-white hover:bg-blue-700' }}">
-                        Quiero el {{ $service->title }}
+                        Cotizar este plan
                     </a>
                 </div>
             @endforeach
