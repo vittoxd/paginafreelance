@@ -32,7 +32,7 @@ class DemoSeeder extends Seeder
                 'description' => 'Lo esencial para dar tu primer paso con buena calidad, sin gastar de más.',
                 'price_from' => 80,
                 'is_featured' => false,
-                'features' => "Reunión inicial para entender tu necesidad\n1 propuesta a tu medida\n1 ronda de ajustes incluida\nSoporte por correo\nEntrega lista para usar",
+                'features' => "Reunión inicial para entender tu necesidad\n1 propuesta a tu medida\n1 ronda de ajustes incluida\nSoporte por WhatsApp\nEntrega lista para usar",
             ],
             [
                 'title' => 'Plan Profesional',
@@ -50,7 +50,7 @@ class DemoSeeder extends Seeder
                 'description' => 'La experiencia completa: máxima prioridad, sin límites y con acompañamiento dedicado.',
                 'price_from' => 350,
                 'is_featured' => false,
-                'features' => "Todo lo del Plan Profesional\nRondas de ajustes ilimitadas\nEntrega express\nSoporte prioritario 24/7\nAsesoría personalizada dedicada\nSeguimiento durante 30 días",
+                'features' => "Todo lo del Plan Profesional\nRondas de ajustes ilimitadas\nEntrega express\nSoporte prioritario por WhatsApp 24/7\nAsesoría personalizada dedicada\nSeguimiento durante 30 días",
             ],
         ];
 

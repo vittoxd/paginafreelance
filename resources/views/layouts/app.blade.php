@@ -17,13 +17,14 @@
                 Nombre de tu Marca
             </a>
             <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
-                <a href="{{ route('home') }}#servicios" class="transition hover:text-blue-600">Servicios</a>
+                <a href="{{ route('home') }}#servicios" class="transition hover:text-blue-600">Planes</a>
                 <a href="{{ route('home') }}#proyectos" class="transition hover:text-blue-600">Proyectos</a>
                 <a href="{{ route('home') }}#sobre-mi" class="transition hover:text-blue-600">Nosotros</a>
+                <a href="{{ route('home') }}#contacto" class="transition hover:text-blue-600">Contacto</a>
             </div>
-            <a href="{{ route('home') }}#contacto"
+            <a href="{{ route('quote') }}"
                class="rounded-full bg-blue-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-blue-700">
-                Contáctanos
+                Solicitar cotización
             </a>
         </nav>
     </header>
