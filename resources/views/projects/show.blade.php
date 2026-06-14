@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $project->title . ' — Impulsa')
+@section('title', $project->title . ' — Kodex Studio')
 @section('meta_description', $project->summary)
 
 @section('content')

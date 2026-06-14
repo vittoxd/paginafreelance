@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Impulsa — Soluciones que hacen crecer tu negocio')</title>
+    <title>@yield('title', 'Kodex Studio — Soluciones que hacen crecer tu negocio')</title>
     <meta name="description" content="@yield('meta_description', 'Servicios profesionales para hacer crecer tu negocio.')">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -89,7 +89,7 @@
             </div>
 
             <div class="mt-12 border-t border-white/10 pt-6 text-center text-sm text-slate-500">
-                &copy; {{ date('Y') }} Impulsa. Todos los derechos reservados.
+                &copy; {{ date('Y') }} Kodex Studio. Todos los derechos reservados.
             </div>
         </div>
     </footer>
