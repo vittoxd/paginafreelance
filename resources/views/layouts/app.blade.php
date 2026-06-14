@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Servicios Profesionales')</title>
+    <title>@yield('title', 'Impulsa — Soluciones que hacen crecer tu negocio')</title>
     <meta name="description" content="@yield('meta_description', 'Servicios profesionales para hacer crecer tu negocio.')">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
@@ -16,8 +16,8 @@
     <header id="site-header" class="fixed inset-x-0 top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur-lg transition-shadow duration-300">
         <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
             <a href="{{ route('home') }}" class="flex items-center gap-2 text-lg font-bold text-slate-900">
-                <span class="grid size-9 place-items-center rounded-lg bg-blue-600 text-sm font-bold text-white">N</span>
-                Nombre de tu Marca
+                <span class="grid size-9 place-items-center rounded-lg bg-blue-600 text-sm font-bold text-white">I</span>
+                Impulsa
             </a>
             <div class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex">
                 <a href="{{ route('home') }}#servicios" class="transition hover:text-blue-600">Planes</a>
@@ -55,8 +55,8 @@
                 {{-- Marca --}}
                 <div>
                     <a href="{{ route('home') }}" class="flex items-center gap-2 text-lg font-bold text-white">
-                        <span class="grid size-9 place-items-center rounded-lg bg-blue-600 text-sm font-bold text-white">N</span>
-                        Nombre de tu Marca
+                        <span class="grid size-9 place-items-center rounded-lg bg-blue-600 text-sm font-bold text-white">I</span>
+                        Impulsa
                     </a>
                     <p class="mt-4 max-w-xs text-sm">Servicios profesionales para hacer crecer tu negocio, con atención cercana y resultados de calidad.</p>
                 </div>
@@ -94,7 +94,7 @@
             </div>
 
             <div class="mt-12 border-t border-white/10 pt-6 text-center text-sm text-slate-500">
-                &copy; {{ date('Y') }} Nombre de tu Marca. Todos los derechos reservados.
+                &copy; {{ date('Y') }} Impulsa. Todos los derechos reservados.
             </div>
         </div>
     </footer>

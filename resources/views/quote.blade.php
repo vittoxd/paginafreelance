@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Solicitar cotización')
+@section('title', 'Solicitar cotización — Impulsa')
 @section('meta_description', 'Pide una cotización personalizada para tu proyecto.')
 
 @section('content')
