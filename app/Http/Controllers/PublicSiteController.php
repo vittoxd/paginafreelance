@@ -15,7 +15,11 @@ class PublicSiteController extends Controller
      */
     public function home()
     {
-        return view('welcome');
+        $projects = Project::orderByDesc('is_featured')
+            ->orderBy('sort_order')
+            ->get();
+
+        return view('welcome', compact('projects'));
     }
 
     /**

@@ -355,6 +355,92 @@ a { color: inherit; text-decoration: none; }
 .kodex-card__link:hover { color: var(--accent-cyan); }
 
 /* ============================================================
+   PROYECTOS
+   ============================================================ */
+.kodex-projects { background: var(--bg-secondary); padding: 4.5rem 0 5rem; }
+.kodex-projects__inner { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+.kodex-project-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+.kodex-project {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform .3s var(--ease), border-color .3s ease, box-shadow .3s ease;
+}
+.kodex-project:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 40px rgba(108, 99, 255, .18);
+}
+.kodex-project__media {
+    aspect-ratio: 16 / 9;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, rgba(108, 99, 255, .22), rgba(0, 212, 255, .08));
+}
+.kodex-project__media img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s var(--ease); }
+.kodex-project:hover .kodex-project__media img { transform: scale(1.05); }
+.kodex-project__letter { font-family: 'Space Grotesk', sans-serif; font-weight: 800; font-size: 2.6rem; color: rgba(108, 99, 255, .45); }
+.kodex-project__body { padding: 1.5rem; }
+.kodex-tag {
+    display: inline-block;
+    margin-bottom: .6rem;
+    padding: .2rem .7rem;
+    border-radius: 999px;
+    background: rgba(108, 99, 255, .15);
+    color: var(--accent);
+    font-size: .7rem;
+    font-weight: 600;
+}
+.kodex-project__title { font-size: 1.2rem; margin: 0 0 .4rem; }
+.kodex-project__desc { color: var(--text-muted); font-size: .9rem; margin: 0; }
+
+/* ============================================================
+   TESTIMONIOS
+   ============================================================ */
+.kodex-testimonials { background: var(--bg-primary); padding: 4.5rem 0 5rem; }
+.kodex-testimonials__inner { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+.kodex-testimonial-grid {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+.kodex-testimonial {
+    display: flex;
+    flex-direction: column;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2rem;
+}
+.kodex-testimonial__stars { color: #FBBF24; letter-spacing: 2px; font-size: 1rem; }
+.kodex-testimonial__quote { margin: 1rem 0 0; flex: 1; color: #C8C8DA; font-size: .98rem; line-height: 1.7; }
+.kodex-testimonial__author { margin-top: 1.5rem; display: flex; align-items: center; gap: .8rem; }
+.kodex-testimonial__avatar {
+    display: grid;
+    place-items: center;
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, rgba(108, 99, 255, .25), rgba(0, 212, 255, .15));
+    color: var(--accent);
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+}
+.kodex-testimonial__name { font-weight: 600; color: var(--text-primary); }
+.kodex-testimonial__role { font-size: .85rem; color: var(--text-muted); }
+
+/* ============================================================
    SEPARADORES (gradiente suave entre fondos contiguos)
    ============================================================ */
 .kodex-separator { height: 80px; width: 100%; }

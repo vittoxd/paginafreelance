@@ -24,7 +24,7 @@
 
         <div class="kodex-hero__ctas kodex-reveal" data-delay="300">
             <a href="{{ route('quote') }}" class="kodex-btn-primary">Solicitar cotización →</a>
-            <a href="#servicios" class="kodex-btn-secondary">Ver proyectos</a>
+            <a href="#proyectos" class="kodex-btn-secondary">Ver proyectos</a>
         </div>
 
         <div class="kodex-hero__social kodex-reveal" data-delay="400">
@@ -100,5 +100,70 @@
         </div>
     </div>
 </section>
+
+<div class="kodex-separator kodex-separator--primary-to-secondary"></div>
+
+{{-- ===================== PROYECTOS ===================== --}}
+<section class="kodex-projects" id="proyectos">
+    <div class="kodex-projects__inner">
+        <span class="kodex-eyebrow kodex-reveal">Proyectos</span>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Trabajos que hemos realizado</h2>
+
+        <div class="kodex-project-grid">
+            @foreach($projects as $project)
+                <a href="{{ route('projects.show', $project) }}" class="kodex-project kodex-reveal" data-delay="{{ 100 * (($loop->index % 3) + 1) }}">
+                    <div class="kodex-project__media">
+                        @if($project->image_path)
+                            <img src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->title }}">
+                        @else
+                            <span class="kodex-project__letter">{{ Str::substr($project->title, 0, 1) }}</span>
+                        @endif
+                    </div>
+                    <div class="kodex-project__body">
+                        @if($project->is_featured)
+                            <span class="kodex-tag">Destacado</span>
+                        @endif
+                        <h3 class="kodex-project__title">{{ $project->title }}</h3>
+                        @if($project->summary)
+                            <p class="kodex-project__desc">{{ $project->summary }}</p>
+                        @endif
+                    </div>
+                </a>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<div class="kodex-separator kodex-separator--secondary-to-primary"></div>
+
+{{-- ===================== TESTIMONIOS ===================== --}}
+<section class="kodex-testimonials">
+    <div class="kodex-testimonials__inner">
+        <span class="kodex-eyebrow kodex-reveal">Testimonios</span>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Lo que dicen nuestros clientes</h2>
+
+        <div class="kodex-testimonial-grid">
+            @foreach([
+                ['María González', 'Dueña de tienda', 'Quedé feliz con el resultado, súper profesional y atento en todo momento. ¡Lo recomiendo!'],
+                ['Juan Pérez', 'Emprendedor', 'Cumplieron los plazos y el trato fue muy cercano. La comunicación por WhatsApp, excelente.'],
+                ['Carla Soto', 'Gerente PyME', 'Muy buena calidad y atención. Sin duda volveré a contratar sus servicios.'],
+            ] as $i => $t)
+                <figure class="kodex-testimonial kodex-reveal" data-delay="{{ 100 * ($i + 1) }}">
+                    <span class="kodex-testimonial__stars">★★★★★</span>
+                    <blockquote class="kodex-testimonial__quote">“{{ $t[2] }}”</blockquote>
+                    <figcaption class="kodex-testimonial__author">
+                        <span class="kodex-testimonial__avatar">{{ Str::substr($t[0], 0, 1) }}</span>
+                        <span>
+                            <span class="kodex-testimonial__name">{{ $t[0] }}</span><br>
+                            <span class="kodex-testimonial__role">{{ $t[1] }}</span>
+                        </span>
+                    </figcaption>
+                </figure>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<div class="kodex-separator kodex-separator--primary-to-secondary"></div>
 
 @endsection
