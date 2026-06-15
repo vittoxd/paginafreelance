@@ -15,15 +15,7 @@ class PublicSiteController extends Controller
      */
     public function home()
     {
-        $services = Service::orderBy('sort_order')->get();
-
-        // Proyectos destacados primero; si no hay, mostramos los más recientes.
-        $projects = Project::orderByDesc('is_featured')
-            ->orderBy('sort_order')
-            ->latest('completed_at')
-            ->get();
-
-        return view('home', compact('services', 'projects'));
+        return view('welcome');
     }
 
     /**

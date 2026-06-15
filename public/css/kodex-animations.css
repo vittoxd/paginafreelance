@@ -1,0 +1,414 @@
+/* ============================================================
+   Kodex Studio — sistema visual, animaciones (CSS vanilla)
+   ============================================================ */
+
+:root {
+    --bg-primary:   #0A0A0F;
+    --bg-secondary: #0D0D14;
+    --bg-card:      #111118;
+    --accent:       #6C63FF;
+    --accent-cyan:  #00D4FF;
+    --text-primary: #F0F0F8;
+    --text-muted:   #8888AA;
+    --border:       #1E1E2E;
+    --gradient:     linear-gradient(135deg, #6C63FF, #00D4FF);
+    --ease:         cubic-bezier(0.16, 1, 0.3, 1);
+    --nav-h:        68px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: var(--nav-h); }
+
+body {
+    margin: 0;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', ui-sans-serif, system-ui, sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .kodex-display {
+    font-family: 'Space Grotesk', 'Inter', sans-serif;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--text-primary);
+}
+
+a { color: inherit; text-decoration: none; }
+
+.kodex-grad-text {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ===== Layout helpers ===== */
+#kodex-main { padding-top: var(--nav-h); }
+.kodex-container { width: 100%; max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; }
+
+/* ============================================================
+   CURSOR PERSONALIZADO (solo desktop)
+   ============================================================ */
+#kodex-cursor {
+    position: fixed;
+    top: 0; left: 0;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--accent);
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: screen;
+    opacity: 0;
+    transition: width .25s var(--ease), height .25s var(--ease), background .25s, opacity .25s;
+    will-change: transform;
+}
+#kodex-cursor.is-active { opacity: 1; }
+#kodex-cursor.is-hover { width: 32px; height: 32px; background: var(--accent-cyan); opacity: .6; }
+
+@media (min-width: 769px) {
+    body.kodex-has-cursor,
+    body.kodex-has-cursor a,
+    body.kodex-has-cursor button,
+    body.kodex-has-cursor .kodex-card { cursor: none; }
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.kodex-nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    height: var(--nav-h);
+    background: rgba(10, 10, 15, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    transition: background .3s ease;
+}
+.kodex-nav.is-scrolled { background: rgba(10, 10, 15, 0.97); }
+.kodex-nav__inner {
+    height: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+.kodex-nav__logo {
+    display: flex;
+    align-items: center;
+    gap: .55rem;
+    white-space: nowrap;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--text-primary);
+}
+.kodex-nav__mark {
+    display: grid;
+    place-items: center;
+    width: 34px; height: 34px;
+    border-radius: 9px;
+    background: var(--gradient);
+    color: #fff;
+    flex: 0 0 auto;
+}
+.kodex-nav__mark svg { width: 18px; height: 18px; }
+
+/* ============================================================
+   BOTONES
+   ============================================================ */
+.kodex-btn-primary,
+.kodex-btn-secondary,
+.kodex-btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    padding: .8rem 1.6rem;
+    border-radius: 999px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: .95rem;
+    cursor: pointer;
+    transition: transform .25s var(--ease), box-shadow .3s ease, background .3s ease, border-color .3s ease, color .3s ease;
+}
+
+.kodex-btn-primary {
+    background: var(--gradient);
+    color: #fff;
+    border: none;
+    animation: kodexCtaPulse 3.5s ease-in-out infinite;
+}
+.kodex-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 32px rgba(108, 99, 255, .6);
+    animation-play-state: paused;
+}
+
+.kodex-btn-secondary {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--border);
+}
+.kodex-btn-secondary:hover { border-color: var(--accent); transform: translateY(-2px); }
+
+.kodex-btn-outline {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1px solid var(--accent);
+    padding: .55rem 1.2rem;
+    font-size: .9rem;
+}
+.kodex-btn-outline:hover { background: var(--gradient); border-color: transparent; }
+
+@keyframes kodexCtaPulse {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(108, 99, 255, 0); }
+    50%      { box-shadow: 0 0 24px 0 rgba(108, 99, 255, .45); }
+}
+
+/* ============================================================
+   BADGE
+   ============================================================ */
+.kodex-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: .55rem;
+    padding: .45rem 1rem;
+    border-radius: 999px;
+    background: var(--border);
+    color: var(--text-primary);
+    font-size: .85rem;
+}
+.kodex-badge__dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: #22C55E;
+    animation: kodexDot 2s ease-in-out infinite;
+}
+@keyframes kodexDot {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, .5); }
+    50%      { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.kodex-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg-primary);
+    padding: 5.5rem 0 4.5rem;
+    text-align: center;
+}
+.kodex-hero__glow {
+    position: absolute;
+    top: -10%; left: 50%;
+    transform: translateX(-50%);
+    width: 700px; height: 500px;
+    background: radial-gradient(circle, rgba(108, 99, 255, .18), transparent 60%);
+    pointer-events: none;
+    filter: blur(40px);
+}
+.kodex-hero__inner { position: relative; max-width: 860px; margin: 0 auto; padding: 0 1.5rem; }
+
+.kodex-hero__title {
+    margin: 1.6rem 0 0;
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    letter-spacing: -0.02em;
+}
+.kodex-hero__title .kodex-words { display: block; }
+
+.kodex-hero__subtitle {
+    margin: 1.4rem auto 0;
+    max-width: 620px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+}
+.kodex-hero__ctas {
+    margin-top: 2.2rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.kodex-hero__social { margin-top: 3.5rem; }
+.kodex-hero__social > p { color: var(--text-muted); font-size: .85rem; margin: 0 0 1.2rem; }
+.kodex-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem 2.5rem;
+    color: var(--text-muted);
+}
+.kodex-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: color .3s ease;
+}
+.kodex-logo:hover { color: var(--text-primary); }
+.kodex-logo svg { width: 20px; height: 20px; }
+
+/* ===== Kinetic typography ===== */
+.word { display: inline-block; overflow: hidden; vertical-align: bottom; }
+.word-inner {
+    display: inline-block;
+    transform: translateY(110%);
+    opacity: 0;
+    transition: transform .7s var(--ease), opacity .7s var(--ease);
+}
+.kodex-words.is-revealed .word-inner { transform: translateY(0); opacity: 1; }
+.kodex-line--grad .word-inner {
+    background: var(--gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+/* ============================================================
+   STATS
+   ============================================================ */
+.kodex-stats { background: var(--bg-secondary); padding: 4rem 0; }
+.kodex-stats__inner {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    text-align: center;
+}
+.kodex-stat__num {
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 800;
+    font-size: clamp(2.4rem, 5vw, 3.4rem);
+    line-height: 1;
+}
+.kodex-stat__label { margin-top: .6rem; color: var(--text-muted); font-size: .95rem; }
+
+/* ============================================================
+   SERVICIOS
+   ============================================================ */
+.kodex-services { background: var(--bg-primary); padding: 4.5rem 0 5rem; }
+.kodex-services__inner { max-width: 1120px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+.kodex-eyebrow {
+    display: inline-block;
+    color: var(--accent);
+    font-size: .8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .18em;
+}
+.kodex-section-title { margin: .8rem 0 0; font-size: clamp(1.8rem, 4vw, 2.6rem); }
+
+.kodex-cards {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    text-align: left;
+}
+.kodex-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 2rem;
+    transition: transform .3s var(--ease), border-color .3s ease, box-shadow .3s ease;
+}
+.kodex-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 12px 40px rgba(108, 99, 255, .18);
+}
+.kodex-card--featured { border-color: var(--accent); position: relative; }
+.kodex-card--featured::before {
+    content: "Más popular";
+    position: absolute;
+    top: -11px; left: 2rem;
+    background: var(--gradient);
+    color: #fff;
+    font-size: .7rem;
+    font-weight: 600;
+    padding: .25rem .8rem;
+    border-radius: 999px;
+}
+.kodex-card__icon {
+    font-size: 2rem;
+    display: inline-block;
+    transition: transform .35s var(--ease);
+}
+.kodex-card:hover .kodex-card__icon { transform: scale(1.15) rotate(5deg); }
+.kodex-card__title { margin: 1rem 0 .5rem; font-size: 1.3rem; }
+.kodex-card__desc { color: var(--text-muted); font-size: .95rem; margin: 0 0 1.4rem; }
+.kodex-card__link { color: var(--accent); font-weight: 500; font-size: .9rem; }
+.kodex-card__link:hover { color: var(--accent-cyan); }
+
+/* ============================================================
+   SEPARADORES (gradiente suave entre fondos contiguos)
+   ============================================================ */
+.kodex-separator { height: 80px; width: 100%; }
+.kodex-separator--primary-to-secondary { background: linear-gradient(var(--bg-primary), var(--bg-secondary)); }
+.kodex-separator--secondary-to-primary { background: linear-gradient(var(--bg-secondary), var(--bg-primary)); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.kodex-footer { background: var(--bg-secondary); border-top: 1px solid var(--border); padding: 3rem 0; }
+.kodex-footer__inner {
+    max-width: 1120px; margin: 0 auto; padding: 0 1.5rem;
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+    align-items: center; justify-content: space-between;
+    color: var(--text-muted); font-size: .9rem;
+}
+.kodex-footer a:hover { color: var(--text-primary); }
+.kodex-footer__links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.kodex-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .65s var(--ease), transform .65s var(--ease);
+}
+.kodex-reveal.visible { opacity: 1; transform: none; }
+.kodex-reveal[data-delay="100"] { transition-delay: .1s; }
+.kodex-reveal[data-delay="200"] { transition-delay: .2s; }
+.kodex-reveal[data-delay="300"] { transition-delay: .3s; }
+.kodex-reveal[data-delay="400"] { transition-delay: .4s; }
+.kodex-reveal[data-delay="500"] { transition-delay: .5s; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 768px) {
+    #kodex-cursor { display: none; }
+    .kodex-stats__inner { grid-template-columns: 1fr; gap: 2.2rem; }
+    .kodex-hero__ctas { flex-direction: column; align-items: stretch; }
+    .kodex-hero__ctas .kodex-btn-primary,
+    .kodex-hero__ctas .kodex-btn-secondary { width: 100%; }
+    .kodex-separator { height: 60px; }
+}
+
+/* ============================================================
+   PREFERENCIA: MENOS MOVIMIENTO
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    .kodex-reveal { opacity: 1; transform: none; transition: none; }
+    .word-inner { transform: none; opacity: 1; transition: none; }
+    .kodex-badge__dot,
+    .kodex-btn-primary { animation: none; }
+    #kodex-cursor { display: none; }
+    html { scroll-behavior: auto; }
+}
