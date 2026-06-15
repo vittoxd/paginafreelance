@@ -1,0 +1,15 @@
+# Configuración de build/arranque para Railway (Nixpacks)
+providers = ["php", "node"]
+
+[phases.install]
+cmds = [
+    "composer install --no-dev --optimize-autoloader --no-interaction",
+    "npm ci"
+]
+
+[phases.build]
+cmds = ["npm run build"]
+
+# Al arrancar: migra la base, cachea config/rutas/vistas y sirve la app.
+[start]
+cmd = "php artisan migrate --force && php artisan config:cache && php artisan route:cache && php artisan view:cache && php artisan serve --host 0.0.0.0 --port $PORT"
