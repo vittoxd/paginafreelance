@@ -74,27 +74,27 @@
 <section class="kodex-services" id="servicios">
     <div class="kodex-services__inner">
         <span class="kodex-eyebrow kodex-reveal">Servicios</span>
-        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Elige el plan ideal para ti</h2>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Lo que puedo hacer por ti</h2>
 
         <div class="kodex-cards">
             <article class="kodex-card kodex-reveal" data-delay="100">
                 <span class="kodex-card__icon">🌐</span>
-                <h3 class="kodex-card__title">Landing Page</h3>
-                <p class="kodex-card__desc">Una página que comunica tu propuesta y convierte visitantes en clientes. Rápida, optimizada y lista para crecer.</p>
+                <h3 class="kodex-card__title">Sitios web & Landing Pages</h3>
+                <p class="kodex-card__desc">Sitios corporativos y landings rápidas, modernas y optimizadas para comunicar tu propuesta y captar clientes.</p>
                 <a href="{{ route('quote', ['plan' => 'plan-basico']) }}" class="kodex-card__link">Cotizar este servicio →</a>
             </article>
 
             <article class="kodex-card kodex-card--featured kodex-reveal" data-delay="200">
                 <span class="kodex-card__icon">⚡</span>
-                <h3 class="kodex-card__title">App Web a Medida</h3>
-                <p class="kodex-card__desc">Sistemas y plataformas hechos a tu medida: paneles, automatizaciones e integraciones que ahorran tiempo y escalan contigo.</p>
+                <h3 class="kodex-card__title">Plataformas web a medida</h3>
+                <p class="kodex-card__desc">SaaS, paneles de gestión y sistemas internos hechos a tu medida: multi-empresa, reportes e integraciones que escalan contigo.</p>
                 <a href="{{ route('quote', ['plan' => 'plan-profesional']) }}" class="kodex-card__link">Cotizar este servicio →</a>
             </article>
 
             <article class="kodex-card kodex-reveal" data-delay="300">
-                <span class="kodex-card__icon">📱</span>
-                <h3 class="kodex-card__title">App Móvil</h3>
-                <p class="kodex-card__desc">Lleva tu negocio al bolsillo de tus clientes con una app moderna, fluida y pensada para la experiencia de uso.</p>
+                <span class="kodex-card__icon">🤖</span>
+                <h3 class="kodex-card__title">Automatización con IA</h3>
+                <p class="kodex-card__desc">Integro inteligencia artificial en tus procesos para automatizar tareas repetitivas, ahorrar tiempo y reducir errores.</p>
                 <a href="{{ route('quote', ['plan' => 'plan-premium']) }}" class="kodex-card__link">Cotizar este servicio →</a>
             </article>
         </div>
@@ -112,11 +112,22 @@
         <div class="kodex-project-grid">
             @foreach($projects as $project)
                 <a href="{{ route('projects.show', $project) }}" class="kodex-project kodex-reveal" data-delay="{{ 100 * (($loop->index % 3) + 1) }}">
-                    <div class="kodex-project__media">
+                    @php
+                        $coverIcons = [
+                            'asesoria-contabilidad-inteligente' => '🧮',
+                            'gestor-de-motos' => '🏍️',
+                            'sistema-de-gestion-academica' => '🎓',
+                        ];
+                        $coverIcon = $coverIcons[$project->slug] ?? '🚀';
+                    @endphp
+                    <div class="kodex-project__media kodex-cover kodex-cover--{{ ($loop->index % 3) + 1 }}">
                         @if($project->image_path)
                             <img src="{{ asset('storage/' . $project->image_path) }}" alt="{{ $project->title }}">
                         @else
-                            <span class="kodex-project__letter">{{ Str::substr($project->title, 0, 1) }}</span>
+                            <span class="kodex-cover__icon">{{ $coverIcon }}</span>
+                            @if($project->tech_stack)
+                                <span class="kodex-cover__tech">{{ $project->tech_stack }}</span>
+                            @endif
                         @endif
                     </div>
                     <div class="kodex-project__body">
@@ -144,9 +155,9 @@
 
         <div class="kodex-testimonial-grid">
             @foreach([
-                ['María González', 'Dueña de tienda', 'Quedé feliz con el resultado, súper profesional y atento en todo momento. ¡Lo recomiendo!'],
-                ['Juan Pérez', 'Emprendedor', 'Cumplieron los plazos y el trato fue muy cercano. La comunicación por WhatsApp, excelente.'],
-                ['Carla Soto', 'Gerente PyME', 'Muy buena calidad y atención. Sin duda volveré a contratar sus servicios.'],
+                ['Daniela Rivas', 'Contadora', 'Automatizó gran parte de nuestro trabajo con el SII y las remuneraciones. La plataforma es clarísima y nos ahorra horas cada semana.'],
+                ['Matías Fuentes', 'Dueño de taller', 'Ahora gestiono el inventario y los clientes desde un solo lugar. Cumplió los plazos y siempre disponible por WhatsApp.'],
+                ['Carla Soto', 'Gerente PyME', 'Entendió exactamente lo que necesitábamos. Trabajo profesional, cercano y a la altura. Sin duda lo recomiendo.'],
             ] as $i => $t)
                 <figure class="kodex-testimonial kodex-reveal" data-delay="{{ 100 * ($i + 1) }}">
                     <span class="kodex-testimonial__stars">★★★★★</span>
