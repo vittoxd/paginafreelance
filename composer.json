@@ -10,6 +10,8 @@
         "ext-gd": "*",
         "ext-intl": "*",
         "ext-pdo_pgsql": "*",
+        "ext-xmlreader": "*",
+        "ext-zip": "*",
         "filament/filament": "*",
         "laravel/framework": "^13.8",
         "laravel/tinker": "^3.0"
