@@ -18,6 +18,15 @@ class RealProjectsSeeder extends Seeder
 
         $proyectos = [
             [
+                'title' => 'NowAI — Portal Inmobiliario',
+                'summary' => 'Modernización completa del sitio de una agencia inmobiliaria: de una web estática y difícil de actualizar a una plataforma con panel de administración de propiedades y descripciones generadas por IA.',
+                'description' => "Antes: NowAI tenía un sitio estático creado con un generador visual — lento de actualizar y sin ninguna herramienta para gestionar propiedades.\n\nLo que trabajamos: reconstruimos el sitio sobre Laravel con un diseño moderno y un panel de administración a medida para publicar y gestionar propiedades, con estados (disponible, a la venta, vendida, arrendada). Sumamos generación de descripciones con inteligencia artificial, integración con portales como Mercado Libre y Yapo, y lo desplegamos en infraestructura de AWS.\n\nResultado: un portal rápido, que el equipo puede mantener sin tocar código y listo para escalar.",
+                'client' => 'NowAI Asesorías Inmobiliarias',
+                'tech_stack' => 'Laravel, Tailwind CSS, MySQL, AWS',
+                'project_url' => 'https://nowai.cl',
+                'is_featured' => true,
+            ],
+            [
                 'title' => 'AsesorIA — Contabilidad inteligente',
                 'summary' => 'Plataforma SaaS multi-tenant para estudios contables en Chile: administra varias empresas, declaraciones del SII, remuneraciones y documentos desde un solo lugar, con automatización por IA.',
                 'description' => "AsesorIA es una plataforma SaaS multi-tenant pensada para contadores y estudios contables en Chile. Permite gestionar múltiples empresas y sus obligaciones (SII, Inspección del Trabajo, remuneraciones, documentos) desde un solo panel, automatizando tareas repetitivas con inteligencia artificial.\n\nDesarrollada como aplicación full-stack moderna, con autenticación, base de datos relacional y una interfaz limpia y rápida.",

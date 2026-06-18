@@ -114,6 +114,7 @@
                 <a href="{{ route('projects.show', $project) }}" class="kodex-project kodex-reveal" data-delay="{{ 100 * (($loop->index % 3) + 1) }}">
                     @php
                         $coverIcons = [
+                            'nowai-portal-inmobiliario' => '🏠',
                             'asesoria-contabilidad-inteligente' => '🧮',
                             'gestor-de-motos' => '🏍️',
                             'sistema-de-gestion-academica' => '🎓',
