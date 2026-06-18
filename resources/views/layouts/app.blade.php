@@ -3,8 +3,24 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>@yield('title', 'Kodex Studio — Desarrollo web a medida')</title>
-    <meta name="description" content="@yield('meta_description', 'Desarrollo a medida para negocios que quieren crecer. Sin templates, sin agencias intermediarias.')">
+    <title>@yield('title', 'Kodex Studio — Desarrollo web a medida para PyMEs')</title>
+    <meta name="description" content="@yield('meta_description', 'Desarrollo web a medida para PyMEs y emprendedores: webs, apps y sistemas con React, Next.js y Laravel. Sin templates, sin agencias intermediarias.')">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    {{-- SEO / Open Graph (cómo se ve al compartir en LinkedIn, WhatsApp, etc.) --}}
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Kodex Studio">
+    <meta property="og:locale" content="es_CL">
+    <meta property="og:title" content="@yield('title', 'Kodex Studio — Desarrollo web a medida para PyMEs')">
+    <meta property="og:description" content="@yield('meta_description', 'Desarrollo web a medida para PyMEs y emprendedores: webs, apps y sistemas con React, Next.js y Laravel. Sin templates, sin agencias intermediarias.')">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:image" content="{{ asset('og-image.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Kodex Studio — Desarrollo web a medida para PyMEs')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Desarrollo web a medida para PyMEs y emprendedores: webs, apps y sistemas con React, Next.js y Laravel.')">
+    <meta name="twitter:image" content="{{ asset('og-image.png') }}">
 
     {{-- Fuentes --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">

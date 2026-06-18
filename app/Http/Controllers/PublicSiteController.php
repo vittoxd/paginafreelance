@@ -80,4 +80,28 @@ class PublicSiteController extends Controller
 
         return back()->with('success', '¡Cotización enviada! Te contactaremos pronto con una propuesta.');
     }
+
+    /**
+     * Mapa del sitio (sitemap.xml) para los buscadores.
+     */
+    public function sitemap()
+    {
+        $urls = [
+            ['loc' => url('/'), 'priority' => '1.0'],
+            ['loc' => route('quote'), 'priority' => '0.8'],
+        ];
+
+        foreach (Project::orderBy('sort_order')->get() as $project) {
+            $urls[] = ['loc' => route('projects.show', $project), 'priority' => '0.6'];
+        }
+
+        $xml = '<?xml version="1.0" encoding="UTF-8"?>' . "\n";
+        $xml .= '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' . "\n";
+        foreach ($urls as $u) {
+            $xml .= "  <url><loc>{$u['loc']}</loc><priority>{$u['priority']}</priority></url>\n";
+        }
+        $xml .= '</urlset>';
+
+        return response($xml, 200)->header('Content-Type', 'application/xml');
+    }
 }

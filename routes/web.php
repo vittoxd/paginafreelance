@@ -14,3 +14,6 @@ Route::post('/contacto', [PublicSiteController::class, 'storeContact'])->name('c
 // Cotización: GET muestra el formulario (con ?plan=slug opcional), POST lo guarda.
 Route::get('/cotizar', [PublicSiteController::class, 'showQuote'])->name('quote');
 Route::post('/cotizar', [PublicSiteController::class, 'storeQuote'])->name('quote.store');
+
+// SEO: mapa del sitio para buscadores
+Route::get('/sitemap.xml', [PublicSiteController::class, 'sitemap'])->name('sitemap');
