@@ -71,10 +71,9 @@ class PublicSiteController extends Controller
     {
         $data = $request->validate([
             'name'       => ['required', 'string', 'max:255'],
-            'email'      => ['required', 'email', 'max:255'],
-            'phone'      => ['nullable', 'string', 'max:50'],
+            'phone'      => ['required', 'string', 'max:50'],
+            'email'      => ['nullable', 'email', 'max:255'],
             'service_id' => ['nullable', 'exists:services,id'],
-            'budget'     => ['nullable', 'string', 'max:100'],
             'details'    => ['required', 'string', 'max:5000'],
         ]);
 

@@ -16,8 +16,7 @@
         <tr><td style="padding:7px 0;color:#818CF8;width:120px">Plan</td><td style="padding:7px 0;font-weight:600;color:#F0F0F8">{{ $datos['service'] ?? '—' }}</td></tr>
         <tr><td style="padding:7px 0;color:#818CF8">Nombre</td><td style="padding:7px 0;color:#F0F0F8">{{ $datos['name'] }}</td></tr>
         <tr><td style="padding:7px 0;color:#818CF8">Email</td><td style="padding:7px 0;color:#F0F0F8">{{ $datos['email'] }}</td></tr>
-        <tr><td style="padding:7px 0;color:#818CF8">Teléfono</td><td style="padding:7px 0;color:#F0F0F8">{{ $datos['phone'] ?? '—' }}</td></tr>
-        <tr><td style="padding:7px 0;color:#818CF8">Presupuesto</td><td style="padding:7px 0;color:#F0F0F8">{{ $datos['budget'] ?? '—' }}</td></tr>
+        <tr><td style="padding:7px 0;color:#818CF8">WhatsApp</td><td style="padding:7px 0;color:#F0F0F8">{{ $datos['phone'] ?? '—' }}</td></tr>
       </table>
 
       <div style="margin-top:20px;background:#0F1117;border:1px solid #2A3142;border-radius:8px;padding:16px">
