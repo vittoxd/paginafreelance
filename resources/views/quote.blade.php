@@ -85,7 +85,7 @@
             <button type="submit"
                     class="hero-cta-primary inline-flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00D4FF] px-8 py-3.5 text-base font-semibold text-white">
                 <x-heroicon-s-paper-airplane class="size-5" />
-                Solicitar cotización
+                Enviar mi mensaje →
             </button>
         </form>
     </div>

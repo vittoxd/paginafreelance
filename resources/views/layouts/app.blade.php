@@ -47,7 +47,7 @@
                 </span>
                 Kodex Studio
             </a>
-            <a href="{{ route('quote') }}" class="kodex-btn-outline">Solicitar cotización</a>
+            <a href="{{ route('quote') }}" class="kodex-btn-outline">Cuéntame tu proyecto</a>
         </div>
     </nav>
 
@@ -69,7 +69,7 @@
             <div class="kodex-footer__links">
                 <a href="mailto:vg88882@gmail.com">vg88882@gmail.com</a>
                 <a href="https://wa.me/56987873015" target="_blank" rel="noopener">WhatsApp</a>
-                <a href="{{ route('quote') }}">Solicitar cotización</a>
+                <a href="{{ route('quote') }}">Cuéntame tu proyecto</a>
             </div>
         </div>
     </footer>

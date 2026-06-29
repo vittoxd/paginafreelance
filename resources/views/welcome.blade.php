@@ -24,7 +24,7 @@
         </p>
 
         <div class="kodex-hero__ctas kodex-reveal" data-delay="300">
-            <a href="{{ route('quote') }}" class="kodex-btn-primary">Agenda una llamada gratis →</a>
+            <a href="{{ route('quote') }}" class="kodex-btn-primary">Cuéntame tu proyecto →</a>
             <a href="#proyectos" class="kodex-btn-secondary">Ver proyectos</a>
         </div>
 
