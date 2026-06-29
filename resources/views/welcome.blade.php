@@ -208,4 +208,36 @@
 
 <div class="kodex-separator kodex-separator--primary-to-secondary"></div>
 
+{{-- ===================== SOBRE MÍ ===================== --}}
+<section class="kodex-about" id="sobre-mi" style="padding:6rem 1.5rem;">
+    <div style="max-width:760px;margin:0 auto;">
+        <span class="kodex-eyebrow kodex-reveal">Sobre mí</span>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Hola, soy Víctor 👋</h2>
+
+        <div class="kodex-reveal" data-delay="150" style="color:#94A3B8;font-size:1.05rem;line-height:1.75;display:flex;flex-direction:column;gap:1.25rem;margin-top:1.5rem;">
+            <p style="margin:0;">
+                Soy desarrollador full-stack y vivo en Rancagua. Tengo 20 años y estoy en tercer año de
+                Ingeniería en Informática en INACAP, pero no espero a titularme para hacer las cosas bien:
+                ya llevo varios proyectos reales funcionando, desde portales inmobiliarios hasta sistemas contables.
+            </p>
+            <p style="margin:0;">
+                Trabajo bajo la marca Kodex Studio, pero detrás no hay una agencia ni un equipo de vendedores: soy yo.
+                Empecé con esto porque me cargaba ver a buenos negocios perdiendo clientes por una web mala
+                —o por no tener ninguna— y pagando fortunas a agencias que los hacían esperar semanas por un cambio chico.
+            </p>
+            <p style="margin:0;">
+                Por eso trabajo distinto: hablas directo conmigo de principio a fin, por WhatsApp, sin intermediarios
+                ni respuestas automáticas. Te explico todo en simple, sin tecnicismos para impresionar, y te muestro
+                avances mientras voy construyendo para que nunca estés a ciegas.
+            </p>
+            <p style="margin:0;color:#F0F0F8;font-weight:500;">
+                Si vas a confiarme algo tan importante como la cara digital o el sistema de tu negocio, lo mínimo es
+                que sepas con quién estás hablando. Acá me tienes.
+            </p>
+        </div>
+    </div>
+</section>
+
+<div class="kodex-separator kodex-separator--secondary-to-primary"></div>
+
 @endsection
