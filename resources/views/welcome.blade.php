@@ -104,6 +104,35 @@
 
 <div class="kodex-separator kodex-separator--primary-to-secondary"></div>
 
+{{-- ===================== PROCESO ===================== --}}
+<section class="kodex-process" style="padding:6rem 1.5rem;">
+    <div style="max-width:1000px;margin:0 auto;">
+        <span class="kodex-eyebrow kodex-reveal">Cómo trabajo</span>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">De la idea a tu negocio funcionando</h2>
+        <p class="kodex-reveal" data-delay="150" style="color:#94A3B8;max-width:620px;margin:0 auto 3rem;text-align:center;">
+            No necesitas saber nada de tecnología para empezar. Esto es lo único que pasa de tu lado:
+        </p>
+
+        <div style="display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));">
+            @foreach([
+                ['1', 'Conversamos', 'Me cuentas qué necesitas por WhatsApp o por el formulario. No tienes que llegar con todo claro: para eso estoy yo, para ordenar la idea y entender qué te sirve de verdad.'],
+                ['2', 'Te paso una propuesta clara', 'Te mando qué voy a hacer, cuánto cuesta y en cuánto tiempo. Todo en pesos y en simple, sin letra chica. Si te hace sentido, partimos.'],
+                ['3', 'Construyo y te voy mostrando', 'Me pongo a trabajar y te enseño avances en el camino. Tú opinas, ajustamos, y así queda como lo imaginaste, no como yo creí entender.'],
+                ['4', 'Lo dejo funcionando', 'Te entrego todo andando, te explico cómo usarlo y quedas con soporte por si algo aparece. Y sigo a un mensaje de distancia para lo que necesites después.'],
+            ] as $i => $step)
+                <div class="kodex-reveal" data-delay="{{ 100 * ($i + 1) }}"
+                     style="background:#1A1F2E;border:1px solid #2A3142;border-radius:1rem;padding:1.75rem;">
+                    <span style="display:inline-flex;align-items:center;justify-content:center;width:2.5rem;height:2.5rem;border-radius:0.75rem;background:linear-gradient(135deg,#6C63FF,#00D4FF);color:#fff;font-weight:800;font-size:1.1rem;margin-bottom:1rem;">{{ $step[0] }}</span>
+                    <h3 style="color:#F0F0F8;font-size:1.1rem;font-weight:700;margin:0 0 0.5rem;">{{ $step[1] }}</h3>
+                    <p style="color:#94A3B8;font-size:0.95rem;line-height:1.6;margin:0;">{{ $step[2] }}</p>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+<div class="kodex-separator kodex-separator--secondary-to-primary"></div>
+
 {{-- ===================== PROYECTOS ===================== --}}
 <section class="kodex-projects" id="proyectos">
     <div class="kodex-projects__inner">
