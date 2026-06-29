@@ -240,4 +240,31 @@
 
 <div class="kodex-separator kodex-separator--secondary-to-primary"></div>
 
+{{-- ===================== FAQ ===================== --}}
+<section class="kodex-faq" id="faq" style="padding:6rem 1.5rem;">
+    <div style="max-width:760px;margin:0 auto;">
+        <span class="kodex-eyebrow kodex-reveal">Preguntas frecuentes</span>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Lo que casi todos me preguntan</h2>
+
+        <div style="display:flex;flex-direction:column;gap:0.75rem;margin-top:2rem;">
+            @foreach([
+                ['¿Cuánto te demoras en entregar?', 'Depende del tamaño. Una web simple suele tomar entre 1 y 3 semanas; un sistema más completo puede ser de 1 a 3 meses. Antes de partir te doy un plazo claro y lo cumplo, y si algo se mueve, te aviso, no te dejo esperando.'],
+                ['¿Y si después necesito cambios?', 'Es normal que con el tiempo quieras ajustar o agregar cosas. Todo proyecto queda con un periodo de soporte para correcciones, y después puedo seguir apoyándote con cambios o mejoras cuando los necesites. No te dejo botado una vez entregado.'],
+                ['¿El código queda mío?', 'Sí. Lo que pagas es tuyo: el código, el diseño y los accesos quedan a tu nombre. No te amarro a mí para que dependas de mí para siempre.'],
+                ['¿Cómo es el pago?', 'Trabajo con un anticipo para empezar (normalmente la mitad) y el resto a la entrega. En proyectos grandes lo dividimos en etapas para que no sea un golpe de una sola vez. Todo conversado y claro antes de partir, sin sorpresas.'],
+                ['¿Puedo ver cómo va antes de que esté listo?', 'Sí, y de hecho lo prefiero. Te voy mostrando avances durante el proceso para que opines y ajustemos sobre la marcha. Así no llegas al final con algo que no era lo que tenías en la cabeza.'],
+            ] as $i => $faq)
+                <details class="kodex-reveal" data-delay="{{ 80 * ($i + 1) }}"
+                         style="background:#1A1F2E;border:1px solid #2A3142;border-radius:0.9rem;padding:1.1rem 1.4rem;">
+                    <summary style="color:#F0F0F8;font-weight:600;font-size:1.02rem;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:1rem;">
+                        {{ $faq[0] }}
+                        <span style="color:#6C63FF;font-size:1.4rem;line-height:1;">+</span>
+                    </summary>
+                    <p style="color:#94A3B8;font-size:0.97rem;line-height:1.65;margin:0.9rem 0 0;">{{ $faq[1] }}</p>
+                </details>
+            @endforeach
+        </div>
+    </div>
+</section>
+
 @endsection
