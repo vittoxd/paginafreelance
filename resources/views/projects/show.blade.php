@@ -19,6 +19,19 @@
         @if($project->summary)
             <p class="mt-4 text-lg text-[#94A3B8]">{{ $project->summary }}</p>
         @endif
+
+        <div class="mt-6 flex flex-wrap items-center gap-3">
+            @if($project->project_url)
+                <a href="{{ $project->project_url }}" target="_blank" rel="noopener"
+                   class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-[#6C63FF] to-[#00D4FF] px-6 py-2.5 text-sm font-semibold text-white transition hover:opacity-90">
+                    <x-heroicon-o-arrow-top-right-on-square class="size-4" />
+                    Ver sitio en vivo
+                </a>
+            @endif
+            @if($project->tech_stack)
+                <span class="inline-flex items-center rounded-full border border-[#2A3142] bg-[#1A1F2E] px-4 py-2 text-xs font-medium text-[#94A3B8]">{{ $project->tech_stack }}</span>
+            @endif
+        </div>
     </div>
 
     {{-- Imagen o placeholder --}}
