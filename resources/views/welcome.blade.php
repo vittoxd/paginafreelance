@@ -29,20 +29,11 @@
         </div>
 
         <div class="kodex-hero__social kodex-reveal" data-delay="400">
-            <p>Con la confianza de empresas en Chile y el extranjero</p>
+            <p>Detrás de proyectos que ya están funcionando</p>
             <div class="kodex-logos">
-                <span class="kodex-logo">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3l10 18H2z"/></svg>
-                    Norvik
-                </span>
-                <span class="kodex-logo">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><circle cx="12" cy="12" r="9"/></svg>
-                    Lumio
-                </span>
-                <span class="kodex-logo">
-                    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2l10 10-10 10L2 12z"/></svg>
-                    Vexa
-                </span>
+                <span class="kodex-logo">🏠 NowAI</span>
+                <span class="kodex-logo">🧮 AsesorIA</span>
+                <span class="kodex-logo">🤝 IncluWork</span>
             </div>
         </div>
 
@@ -55,16 +46,16 @@
 <section class="kodex-stats">
     <div class="kodex-stats__inner">
         <div class="kodex-reveal">
-            <div class="kodex-stat__num kodex-grad-text"><span class="kodex-counter" data-target="10" data-suffix="+">0</span></div>
-            <p class="kodex-stat__label">Clientes satisfechos</p>
-        </div>
-        <div class="kodex-reveal" data-delay="100">
-            <div class="kodex-stat__num kodex-grad-text"><span class="kodex-counter" data-target="15" data-suffix="+">0</span></div>
+            <div class="kodex-stat__num kodex-grad-text"><span class="kodex-counter" data-target="5" data-suffix="+">0</span></div>
             <p class="kodex-stat__label">Proyectos entregados</p>
         </div>
+        <div class="kodex-reveal" data-delay="100">
+            <div class="kodex-stat__num kodex-grad-text"><span class="kodex-counter" data-target="6" data-suffix="+">0</span></div>
+            <p class="kodex-stat__label">Tecnologías que domino</p>
+        </div>
         <div class="kodex-reveal" data-delay="200">
-            <div class="kodex-stat__num kodex-grad-text"><span class="kodex-counter" data-target="3" data-suffix=" años">0</span></div>
-            <p class="kodex-stat__label">De experiencia</p>
+            <div class="kodex-stat__num kodex-grad-text"><span class="kodex-counter" data-target="100" data-suffix="%">0</span></div>
+            <p class="kodex-stat__label">Trato directo, sin agencia</p>
         </div>
     </div>
 </section>
