@@ -75,27 +75,27 @@
 <section class="kodex-services" id="servicios">
     <div class="kodex-services__inner">
         <span class="kodex-eyebrow kodex-reveal">Servicios</span>
-        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Soluciones para hacer crecer tu negocio</h2>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">En qué te puedo ayudar</h2>
 
         <div class="kodex-cards">
             <article class="kodex-card kodex-reveal" data-delay="100">
                 <span class="kodex-card__icon">🌐</span>
-                <h3 class="kodex-card__title">Una web que convierte visitas en clientes</h3>
-                <p class="kodex-card__desc">Sitios corporativos y landings rápidas, modernas y optimizadas para captar clientes — no solo para verse bien.</p>
+                <h3 class="kodex-card__title">Una web que sí te traiga clientes</h3>
+                <p class="kodex-card__desc">Tienes un buen negocio, pero cuando alguien te busca en internet no encuentra nada —o una página vieja que no representa lo que haces hoy. Te armo un sitio rápido y moderno, pensado para que el que llega te escriba o te compre.</p>
                 <a href="{{ route('quote', ['plan' => 'plan-basico']) }}" class="kodex-card__link">Ver cuánto costaría →</a>
             </article>
 
             <article class="kodex-card kodex-card--featured kodex-reveal" data-delay="200">
                 <span class="kodex-card__icon">⚡</span>
-                <h3 class="kodex-card__title">El sistema que necesitas, construido para ti</h3>
-                <p class="kodex-card__desc">SaaS, paneles de gestión y sistemas internos a tu medida. Sin compromisos con lo que no necesitas, sin cobros extra.</p>
+                <h3 class="kodex-card__title">Un sistema que ordene el desorden</h3>
+                <p class="kodex-card__desc">Si llevas el inventario, los clientes o las ventas a mano, en WhatsApp y en mil planillas, sabes lo fácil que es que algo se pierda. Te hago un sistema a tu medida —solo con lo que necesitas— para tener todo en un mismo lugar.</p>
                 <a href="{{ route('quote', ['plan' => 'plan-profesional']) }}" class="kodex-card__link">Ver cuánto costaría →</a>
             </article>
 
             <article class="kodex-card kodex-reveal" data-delay="300">
                 <span class="kodex-card__icon">🤖</span>
-                <h3 class="kodex-card__title">Deja que la IA haga el trabajo repetitivo</h3>
-                <p class="kodex-card__desc">Automatizo tus procesos con inteligencia artificial para que tu equipo se enfoque en lo que realmente importa.</p>
+                <h3 class="kodex-card__title">Que la IA haga lo aburrido por ti</h3>
+                <p class="kodex-card__desc">Hay tareas que repites todos los días: responder lo mismo, copiar datos de un lado a otro, redactar descripciones. Integro inteligencia artificial para que esas pegas se hagan solas y te ahorres horas.</p>
                 <a href="{{ route('quote', ['plan' => 'plan-premium']) }}" class="kodex-card__link">Ver cuánto costaría →</a>
             </article>
         </div>
