@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\NuevaCotizacion;
 use App\Models\ContactMessage;
 use App\Models\Project;
 use App\Models\Quote;
 use App\Models\Service;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class PublicSiteController extends Controller
 {
@@ -76,7 +78,20 @@ class PublicSiteController extends Controller
             'details'    => ['required', 'string', 'max:5000'],
         ]);
 
-        Quote::create($data);
+        $quote = Quote::create($data);
+
+        // Enriquecer con nombre del servicio para el email
+        $serviceName = null;
+        if (! empty($data['service_id'])) {
+            $serviceName = Service::find($data['service_id'])?->title;
+        }
+
+        try {
+            Mail::to(config('mail.owner_email', 'vg88882@gmail.com'))
+                ->send(new NuevaCotizacion(array_merge($data, ['service' => $serviceName])));
+        } catch (\Throwable $e) {
+            \Log::error('Error enviando email cotización: ' . $e->getMessage());
+        }
 
         return back()->with('success', '¡Cotización enviada! Te contactaremos pronto con una propuesta.');
     }

@@ -13,17 +13,17 @@
         </span>
 
         <h1 class="kodex-hero__title">
-            <span class="kodex-words">Webs, apps y sistemas</span>
-            <span class="kodex-words kodex-line--grad">que hacen crecer tu negocio.</span>
+            <span class="kodex-words">Tu negocio merece una web</span>
+            <span class="kodex-words kodex-line--grad">que trabaje por ti.</span>
         </h1>
 
         <p class="kodex-hero__subtitle kodex-reveal" data-delay="200">
-            Desarrollo a medida para negocios que quieren crecer.
-            Sin templates. Sin agencias intermediarias.
+            Desarrollo web y sistemas a medida para PyMEs y emprendedores en Chile.
+            Hablas directo conmigo — sin intermediarios, sin letra chica, sin templates.
         </p>
 
         <div class="kodex-hero__ctas kodex-reveal" data-delay="300">
-            <a href="{{ route('quote') }}" class="kodex-btn-primary">Solicitar cotización →</a>
+            <a href="{{ route('quote') }}" class="kodex-btn-primary">Agenda una llamada gratis →</a>
             <a href="#proyectos" class="kodex-btn-secondary">Ver proyectos</a>
         </div>
 
@@ -74,28 +74,28 @@
 <section class="kodex-services" id="servicios">
     <div class="kodex-services__inner">
         <span class="kodex-eyebrow kodex-reveal">Servicios</span>
-        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Lo que puedo hacer por ti</h2>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Soluciones para hacer crecer tu negocio</h2>
 
         <div class="kodex-cards">
             <article class="kodex-card kodex-reveal" data-delay="100">
                 <span class="kodex-card__icon">🌐</span>
-                <h3 class="kodex-card__title">Sitios web & Landing Pages</h3>
-                <p class="kodex-card__desc">Sitios corporativos y landings rápidas, modernas y optimizadas para comunicar tu propuesta y captar clientes.</p>
-                <a href="{{ route('quote', ['plan' => 'plan-basico']) }}" class="kodex-card__link">Cotizar este servicio →</a>
+                <h3 class="kodex-card__title">Una web que convierte visitas en clientes</h3>
+                <p class="kodex-card__desc">Sitios corporativos y landings rápidas, modernas y optimizadas para captar clientes — no solo para verse bien.</p>
+                <a href="{{ route('quote', ['plan' => 'plan-basico']) }}" class="kodex-card__link">Ver cuánto costaría →</a>
             </article>
 
             <article class="kodex-card kodex-card--featured kodex-reveal" data-delay="200">
                 <span class="kodex-card__icon">⚡</span>
-                <h3 class="kodex-card__title">Plataformas web a medida</h3>
-                <p class="kodex-card__desc">SaaS, paneles de gestión y sistemas internos hechos a tu medida: multi-empresa, reportes e integraciones que escalan contigo.</p>
-                <a href="{{ route('quote', ['plan' => 'plan-profesional']) }}" class="kodex-card__link">Cotizar este servicio →</a>
+                <h3 class="kodex-card__title">El sistema que necesitas, construido para ti</h3>
+                <p class="kodex-card__desc">SaaS, paneles de gestión y sistemas internos a tu medida. Sin compromisos con lo que no necesitas, sin cobros extra.</p>
+                <a href="{{ route('quote', ['plan' => 'plan-profesional']) }}" class="kodex-card__link">Ver cuánto costaría →</a>
             </article>
 
             <article class="kodex-card kodex-reveal" data-delay="300">
                 <span class="kodex-card__icon">🤖</span>
-                <h3 class="kodex-card__title">Automatización con IA</h3>
-                <p class="kodex-card__desc">Integro inteligencia artificial en tus procesos para automatizar tareas repetitivas, ahorrar tiempo y reducir errores.</p>
-                <a href="{{ route('quote', ['plan' => 'plan-premium']) }}" class="kodex-card__link">Cotizar este servicio →</a>
+                <h3 class="kodex-card__title">Deja que la IA haga el trabajo repetitivo</h3>
+                <p class="kodex-card__desc">Automatizo tus procesos con inteligencia artificial para que tu equipo se enfoque en lo que realmente importa.</p>
+                <a href="{{ route('quote', ['plan' => 'plan-premium']) }}" class="kodex-card__link">Ver cuánto costaría →</a>
             </article>
         </div>
     </div>
