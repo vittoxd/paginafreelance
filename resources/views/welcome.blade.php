@@ -9,7 +9,7 @@
 
         <span class="kodex-badge kodex-reveal">
             <span class="kodex-badge__dot"></span>
-            Disponibles para nuevos proyectos
+            Tomando 2 proyectos nuevos este mes
         </span>
 
         <h1 class="kodex-hero__title">
