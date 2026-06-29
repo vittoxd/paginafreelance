@@ -13,8 +13,8 @@
         </a>
 
         <div class="mt-8 mb-10 text-center">
-            <h1 class="text-3xl font-bold text-[#F0F0F8] md:text-4xl">Solicita tu cotización</h1>
-            <p class="mt-4 text-[#94A3B8]">Cuéntanos qué necesitas y te enviamos una propuesta a tu medida, sin compromiso.</p>
+            <h1 class="text-3xl font-bold text-[#F0F0F8] md:text-4xl">Cuéntame qué tienes en mente</h1>
+            <p class="mt-4 text-[#94A3B8]">No necesitas tenerlo todo claro ni saber de tecnología. Cuéntame qué necesitas o qué problema quieres resolver, y te respondo con una propuesta concreta —cuánto, en cuánto tiempo y cómo— sin compromiso. Te leo yo, no un robot.</p>
         </div>
 
         @if(session('success'))
@@ -78,7 +78,7 @@
                 <label for="details" class="mb-2 block text-sm font-medium text-[#E2E8F0]">Detalles de lo que necesitas</label>
                 <textarea name="details" id="details" rows="5"
                           class="w-full rounded-xl border border-[#2A3142] bg-[#0F1117] px-4 py-3 text-[#F0F0F8] placeholder-[#64748B] outline-none transition focus:border-[#6C63FF] focus:ring-2 focus:ring-[#6C63FF]/25"
-                          placeholder="Describe tu proyecto, plazos, objetivos...">{{ old('details') }}</textarea>
+                          placeholder="Ej: 'Tengo un taller mecánico y llevo todo en cuaderno, quiero ordenar el inventario y los clientes' o 'Necesito una web para mi restaurante porque no aparezco en Google'. Mientras más me cuentes, mejor te puedo responder.">{{ old('details') }}</textarea>
                 @error('details') <p class="mt-1.5 text-sm text-rose-400">{{ $message }}</p> @enderror
             </div>
 

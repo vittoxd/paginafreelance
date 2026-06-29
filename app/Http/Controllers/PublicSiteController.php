@@ -93,7 +93,7 @@ class PublicSiteController extends Controller
             \Log::error('Error enviando email cotización: ' . $e->getMessage());
         }
 
-        return back()->with('success', '¡Cotización enviada! Te contactaremos pronto con una propuesta.');
+        return back()->with('success', '¡Listo, recibí tu mensaje! 🙌 Te respondo personalmente dentro de las próximas 24 horas, normalmente antes. Si quieres avanzar más rápido, escríbeme directo por WhatsApp y lo vemos al tiro.');
     }
 
     /**
