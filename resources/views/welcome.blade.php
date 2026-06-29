@@ -13,13 +13,14 @@
         </span>
 
         <h1 class="kodex-hero__title">
-            <span class="kodex-words">Tu negocio merece una web</span>
-            <span class="kodex-words kodex-line--grad">que trabaje por ti.</span>
+            <span class="kodex-words">Tu negocio funciona,</span>
+            <span class="kodex-words kodex-line--grad">pero tu web no lo está ayudando.</span>
         </h1>
 
         <p class="kodex-hero__subtitle kodex-reveal" data-delay="200">
-            Desarrollo web y sistemas a medida para PyMEs y emprendedores en Chile.
-            Hablas directo conmigo — sin intermediarios, sin letra chica, sin templates.
+            Soy Víctor, desarrollador en Rancagua. Construyo webs, apps y sistemas a medida
+            para PyMEs chilenas que ya tienen clientes y quieren dejar de perder tiempo —y plata—
+            en procesos manuales o en una página que da vergüenza pasar.
         </p>
 
         <div class="kodex-hero__ctas kodex-reveal" data-delay="300">
