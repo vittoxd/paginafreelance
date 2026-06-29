@@ -19,8 +19,8 @@ class RealProjectsSeeder extends Seeder
         $proyectos = [
             [
                 'title' => 'NowAI — Portal Inmobiliario',
-                'summary' => 'Modernización completa del sitio de una agencia inmobiliaria: de una web estática y difícil de actualizar a una plataforma con panel de administración de propiedades y descripciones generadas por IA.',
-                'description' => "Antes: NowAI tenía un sitio estático creado con un generador visual — lento de actualizar y sin ninguna herramienta para gestionar propiedades.\n\nLo que trabajamos: reconstruimos el sitio sobre Laravel con un diseño moderno y un panel de administración a medida para publicar y gestionar propiedades, con estados (disponible, a la venta, vendida, arrendada). Sumamos generación de descripciones con inteligencia artificial, integración con portales como Mercado Libre y Yapo, y lo desplegamos en infraestructura de AWS.\n\nResultado: un portal rápido, que el equipo puede mantener sin tocar código y listo para escalar.",
+                'summary' => 'Pasaron de una web estática imposible de actualizar a un portal donde ellos mismos gestionan sus propiedades en minutos, con descripciones generadas por IA.',
+                'description' => "El problema: una inmobiliaria tenía un sitio estático donde cada vez que querían subir, sacar o editar una propiedad tenían que pedírselo a alguien. Lento y caro.\n\nLo que hice: les construí una plataforma con panel de administración propio, donde ellos mismos cargan y gestionan las propiedades (con estados: disponible, a la venta, vendida, arrendada) y con descripciones generadas automáticamente por IA. Integré portales como Mercado Libre y Yapo, y lo desplegué en infraestructura de AWS.\n\nEl resultado: hoy actualizan su catálogo en minutos, sin depender de nadie, y cada propiedad sale publicada con una descripción lista y profesional.",
                 'client' => 'NowAI Asesorías Inmobiliarias',
                 'tech_stack' => 'Laravel, Tailwind CSS, MySQL, AWS',
                 'project_url' => 'https://nowai.cl',
@@ -28,15 +28,15 @@ class RealProjectsSeeder extends Seeder
             ],
             [
                 'title' => 'AsesorIA — Contabilidad inteligente',
-                'summary' => 'Plataforma SaaS multi-tenant para estudios contables en Chile: administra varias empresas, declaraciones del SII, remuneraciones y documentos desde un solo lugar, con automatización por IA.',
-                'description' => "AsesorIA es una plataforma SaaS multi-tenant pensada para contadores y estudios contables en Chile. Permite gestionar múltiples empresas y sus obligaciones (SII, Inspección del Trabajo, remuneraciones, documentos) desde un solo panel, automatizando tareas repetitivas con inteligencia artificial.\n\nDesarrollada como aplicación full-stack moderna, con autenticación, base de datos relacional y una interfaz limpia y rápida.",
+                'summary' => 'Dejaron de saltar entre diez archivos para cerrar un mes: ahora administran todas sus empresas y obligaciones del SII desde una sola pantalla.',
+                'description' => "El problema: un estudio contable manejaba varias empresas con sus declaraciones del SII, remuneraciones y documentos repartidos en carpetas, correos y planillas distintas.\n\nLo que hice: desarrollé una plataforma SaaS multi-empresa donde administran a todos sus clientes desde un solo panel, con automatización por IA en las tareas repetitivas. La construí como aplicación full-stack moderna, con autenticación, base de datos relacional y una interfaz limpia y rápida.\n\nEl resultado: dejaron de saltar entre diez archivos para cerrar un mes y ahora encuentran todo de una empresa en una sola pantalla.",
                 'tech_stack' => 'Next.js, TypeScript, Prisma, Tailwind CSS',
                 'is_featured' => true,
             ],
             [
                 'title' => 'Gestor de Motos',
-                'summary' => 'Sistema full-stack para la gestión de un taller y venta de motos: API backend e interfaz web para administrar inventario, clientes y operaciones.',
-                'description' => "Aplicación full-stack para administrar un negocio de motos: una API backend que expone los datos y una interfaz web que permite gestionar inventario, clientes y operaciones del día a día.\n\nProyecto que integra frontend y backend comunicándose vía API REST.",
+                'summary' => 'Cambiaron el cuaderno por un sistema donde ven en tiempo real qué motos tienen en stock, qué vendieron y a quién.',
+                'description' => "El problema: un taller que además vende motos llevaba el inventario, los clientes y las operaciones a mano, y nunca tenían claro qué había en stock ni qué les debían.\n\nLo que hice: les armé un sistema completo —una API backend que expone los datos y una interfaz web— para administrar inventario, fichas de clientes y el día a día del taller, comunicándose vía API REST.\n\nEl resultado: ahora saben en tiempo real qué tienen, qué vendieron y a quién, sin andar revisando cuadernos.",
                 'tech_stack' => 'API REST, JavaScript, HTML, CSS',
                 'is_featured' => true,
             ],
