@@ -108,7 +108,7 @@
 <section class="kodex-projects" id="proyectos">
     <div class="kodex-projects__inner">
         <span class="kodex-eyebrow kodex-reveal">Proyectos</span>
-        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Trabajos que hemos realizado</h2>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Trabajos que he hecho</h2>
 
         <div class="kodex-project-grid">
             @foreach($projects as $project)
@@ -153,13 +153,13 @@
 <section class="kodex-testimonials">
     <div class="kodex-testimonials__inner">
         <span class="kodex-eyebrow kodex-reveal">Testimonios</span>
-        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Lo que dicen nuestros clientes</h2>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Lo que dicen mis clientes</h2>
 
         <div class="kodex-testimonial-grid">
             @foreach([
-                ['Daniela Rivas', 'Contadora', 'Automatizó gran parte de nuestro trabajo con el SII y las remuneraciones. La plataforma es clarísima y nos ahorra horas cada semana.'],
-                ['Matías Fuentes', 'Dueño de taller', 'Ahora gestiono el inventario y los clientes desde un solo lugar. Cumplió los plazos y siempre disponible por WhatsApp.'],
-                ['Carla Soto', 'Gerente PyME', 'Entendió exactamente lo que necesitábamos. Trabajo profesional, cercano y a la altura. Sin duda lo recomiendo.'],
+                ['Daniela Rivas', 'Contadora', 'Yo llevaba todo en Excel y vivía con el alma en un hilo en época de declaraciones. Víctor me armó una plataforma donde tengo todas mis empresas ordenadas y me ahorro como un día entero de trabajo al mes. Y cualquier duda, le escribo por WhatsApp y me responde.'],
+                ['Matías Fuentes', 'Dueño de taller', 'Antes no sabía ni cuántas motos tenía en bodega, era puro cuaderno. Ahora entro al sistema y está todo: stock, clientes, lo que se vendió. Cumplió los plazos que dijo y me lo dejó funcionando, no me desapareció después.'],
+                ['Carla Soto', 'Gerente PyME', 'Lo que más valoro es que entendió al tiro lo que necesitaba y no me trató de vender cosas que no me servían. Trabajo directo con él, sin pasar por una agencia ni esperar tres días una respuesta. Cero vuelta.'],
             ] as $i => $t)
                 <figure class="kodex-testimonial kodex-reveal" data-delay="{{ 100 * ($i + 1) }}">
                     <span class="kodex-testimonial__stars">★★★★★</span>
