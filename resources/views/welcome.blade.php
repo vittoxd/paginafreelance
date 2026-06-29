@@ -147,6 +147,7 @@
                             'nowai-portal-inmobiliario' => '🏠',
                             'asesoria-contabilidad-inteligente' => '🧮',
                             'gestor-de-motos' => '🏍️',
+                            'incluwork-vitrina-y-post-venta' => '🤝',
                             'sistema-de-gestion-academica' => '🎓',
                         ];
                         $coverIcon = $coverIcons[$project->slug] ?? '🚀';

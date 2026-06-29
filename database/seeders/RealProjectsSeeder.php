@@ -41,6 +41,14 @@ class RealProjectsSeeder extends Seeder
                 'is_featured' => true,
             ],
             [
+                'title' => 'IncluWork — Vitrina y Post-venta',
+                'summary' => 'Le di a una empresa su primera presencia online: una vitrina donde sus clientes piden cotizaciones, agendan visitas y dejan reclamos o consultas de post-venta, sin tener que llamar por teléfono.',
+                'description' => "El problema: IncluWork no tenía presencia online y manejaba las cotizaciones, las visitas y los reclamos de sus clientes por teléfono y WhatsApp, sin un lugar ordenado donde quedara registro de nada.\n\nLo que hice: les construí una vitrina web donde muestran sus servicios y trabajos, los clientes piden cotizaciones y agendan visitas, y todo le llega al equipo por correo al instante. Sumé un módulo de post-venta donde el cliente se identifica con su correo o teléfono y deja reclamos, consultas, garantías o reseñas, más un panel de administración para revisar todo en un solo lugar. Lo levanté sobre Next.js con base de datos en Supabase y notificaciones por correo.\n\nEl resultado: dejaron el teléfono como único canal y ahora reciben, registran y responden las solicitudes de forma ordenada.",
+                'client' => 'IncluWork',
+                'tech_stack' => 'Next.js, TypeScript, Supabase, Tailwind CSS',
+                'is_featured' => true,
+            ],
+            [
                 'title' => 'Sistema de Gestión Académica',
                 'summary' => 'Aplicación web para administrar alumnos y carreras, con autenticación y arquitectura por capas (patrón DAO), desplegada en un servidor Linux con PHP en AWS.',
                 'description' => "Sistema web para la gestión de alumnos y carreras de una institución: registro, autenticación de usuarios y administración de datos con una arquitectura por capas usando el patrón DAO (Data Access Object).\n\nDesplegado en un servidor Linux con PHP sobre infraestructura de AWS.",
