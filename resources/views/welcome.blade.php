@@ -170,6 +170,55 @@
 
 <div class="kodex-separator kodex-separator--secondary-to-primary"></div>
 
+{{-- ===================== PRECIOS ===================== --}}
+<section class="kodex-pricing" id="precios" style="padding:6rem 1.5rem;">
+    <div style="max-width:1100px;margin:0 auto;">
+        <span class="kodex-eyebrow kodex-reveal">Planes</span>
+        <h2 class="kodex-section-title kodex-reveal" data-delay="100">Precios claros, sin sorpresas</h2>
+        <p class="kodex-reveal" data-delay="150" style="color:#94A3B8;max-width:620px;margin:0 auto 3rem;text-align:center;">
+            Cada proyecto es distinto, pero estos son los rangos para que te hagas una idea. El precio final lo conversamos según lo que necesites.
+        </p>
+
+        <div style="display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:start;">
+            @foreach($services as $i => $plan)
+                @php $feat = $plan->is_featured; @endphp
+                <div class="kodex-reveal" data-delay="{{ 100 * ($i + 1) }}"
+                     style="position:relative;background:{{ $feat ? 'linear-gradient(180deg,#1E2236,#161A28)' : '#1A1F2E' }};border:1px solid {{ $feat ? '#6C63FF' : '#2A3142' }};border-radius:1.25rem;padding:2rem;{{ $feat ? 'box-shadow:0 20px 50px -20px rgba(108,99,255,.55);' : '' }}">
+                    @if($feat)
+                        <span style="position:absolute;top:-0.85rem;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#6C63FF,#00D4FF);color:#fff;font-size:0.72rem;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:0.35rem 0.9rem;border-radius:999px;white-space:nowrap;">★ Más popular</span>
+                    @endif
+                    <h3 style="color:#F0F0F8;font-size:1.25rem;font-weight:700;margin:0 0 0.35rem;">{{ $plan->title }}</h3>
+                    <p style="color:#818CF8;font-size:0.9rem;margin:0 0 1.25rem;">{{ $plan->tagline }}</p>
+                    <div style="margin-bottom:1rem;">
+                        <span style="color:#64748B;font-size:0.85rem;">Desde</span>
+                        <div style="color:#F0F0F8;font-size:1.9rem;font-weight:800;line-height:1.1;">${{ number_format($plan->price_from, 0, ',', '.') }}<span style="font-size:0.85rem;font-weight:500;color:#64748B;"> CLP</span></div>
+                    </div>
+                    @if($plan->delivery_time)
+                        <p style="color:#94A3B8;font-size:0.85rem;margin:0 0 1.25rem;">⏱ Entrega estimada: {{ $plan->delivery_time }}</p>
+                    @endif
+                    <ul style="list-style:none;padding:0;margin:0 0 1.75rem;display:flex;flex-direction:column;gap:0.6rem;">
+                        @foreach(explode("\n", $plan->features) as $f)
+                            <li style="color:#CBD5E1;font-size:0.92rem;display:flex;gap:0.55rem;align-items:flex-start;line-height:1.45;">
+                                <span style="color:#34D399;flex-shrink:0;">✓</span> {{ $f }}
+                            </li>
+                        @endforeach
+                    </ul>
+                    <a href="{{ route('quote', ['plan' => $plan->slug]) }}"
+                       style="display:block;text-align:center;border-radius:999px;padding:0.85rem;font-weight:700;font-size:0.95rem;text-decoration:none;{{ $feat ? 'background:linear-gradient(135deg,#6C63FF,#00D4FF);color:#fff;' : 'border:1px solid #2A3142;color:#F0F0F8;' }}">
+                        Quiero este plan →
+                    </a>
+                </div>
+            @endforeach
+        </div>
+
+        <p class="kodex-reveal" style="color:#64748B;font-size:0.92rem;text-align:center;margin-top:2.25rem;">
+            ¿No sabes cuál te sirve? <a href="{{ route('quote') }}" style="color:#818CF8;">Cuéntame tu caso</a> y lo vemos juntos.
+        </p>
+    </div>
+</section>
+
+<div class="kodex-separator kodex-separator--primary-to-secondary"></div>
+
 {{-- ===================== TESTIMONIOS ===================== --}}
 <section class="kodex-testimonials">
     <div class="kodex-testimonials__inner">

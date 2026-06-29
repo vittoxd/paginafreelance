@@ -21,7 +21,9 @@ class PublicSiteController extends Controller
             ->orderBy('sort_order')
             ->get();
 
-        return view('welcome', compact('projects'));
+        $services = Service::orderBy('sort_order')->get();
+
+        return view('welcome', compact('projects', 'services'));
     }
 
     /**
